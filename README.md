@@ -1,3 +1,3 @@
 
 Template:
-![Academic Pages]https://github.com/academicpages/academicpages.github.io
+[Academic Pages](https://github.com/academicpages/academicpages.github.io)
