@@ -1,16 +1,13 @@
 ---
 permalink: /
-title: "Welcome to Jackson Small's Portfolio Website"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-About Me
-======
+
 Hi! I am Jackson Small, a 4th-year Data Science student at the University of Central Florida.
-
-
 
 Skills and Interests
 ======
@@ -21,6 +18,20 @@ As a student, I am actively gaining proficiency in a range of data science tools
 - **Programming Skills**: Data Visualization, Data Analysis, Data Structures, Data Engineering.
 
 I have a keen interest in the Deep Learning sector of Data Science in fields like Automatic Seizure Detection in EEG Signals, which is the focus of my Honors Undergraduate Thesis. I believe a strong foundation in statistics and mathematics is essential to fully understand and effectively create accurate and interpretable machine learning models.
+
+
+Beyond Academics
+======
+
+- BSA Eagle Scout
+    - My Eagle Scout project involved constructing two little library boxes for two parks, working collaboratively with the local fire department to create more community involvement and a hub for literary growth. 
+- CRU
+    - Youth Group Leader since 2024, aiding in leading the Lake Claire Community Group at UCF. I play percussion (cajon/drums) for the worship team!
+- Collegiate Mathematical Society at UCF
+    - Attended the American Mathematical Society (AMS) conference, which gathers mathematicians, researchers, and students to share cutting-edge research and explore new mathematical trends.
+    - STEM Day at UCF: Presented and engaged with K-12 students with the help of the Collegiate Mathematical Society about mathematical phenomena such as Hilbert’s Hotel Paradox, Monty Hall, and Möbius Strip.
+
+
 
 <!-- **Markdown generator**
 
