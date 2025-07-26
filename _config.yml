@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Data Science Portfolio"
+title                    : "Jackson Small"
 title_separator          : "-"
 name                     : &name "Jackson Small"
 description              : &description "I am in my 4th year earning a B.S. in Data Science."
