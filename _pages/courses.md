@@ -54,7 +54,7 @@ Courses are listed by completion status and demonstrate my rigorous background i
 | Course | Title | Term | Grade | Units |
 | :--- | :--- | :--- | :--- | :--- |
 | **MAS 3105** | MATRIX AND LINEAR ALGEBRA | Fall 2024 | A- | 4.00 |
-| **MAP 4191** | MATH. MODELING OF DATA | Fall 2025 | | 3.00 |
+| **MAP 4191** | MATH. MODELING OF DATA | Fall 2025 | A | 3.00 |
 | **MAC 2313** | CALC W ANALYTIC GEOMETRY III | Spring 2024 | C | 4.00 |
 | **MAC 2312** | CALC W ANALYTIC GEOMETRY II | Fall 2023 | C+ | 4.00 |
 | **MAC 2311C** | CALC WITH ANALYTIC GEOMETRY I | Summer 2023 | A | 4.00 |
