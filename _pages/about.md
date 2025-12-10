@@ -7,29 +7,54 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am Jackson Small, a 4th-year Data Science student at the University of Central Florida.
+## Hello! I'm Jackson Small
 
-Skills and Interests
-======
-As a student, I am actively gaining proficiency in a range of data science tools including: 
+I am a highly motivated Data Science student at the **University of Central Florida's Burnett Honors College**, pursuing a Bachelor of Science degree (expected May 2026, 3.806 GPA). My passion lies in applying statistical rigor and advanced machine learning to solve complex challenges, particularly those involving large-scale data and automation.
 
-- **Languages & Platforms**: Python, SQL, Tableau, R, SPARK, Julia, C, Git, VSC.
-- **Library Skills**: NumPy, Pandas, Matplotlib, TensorFlow, scikit-learn.
-- **Programming Skills**: Data Visualization, Data Analysis, Data Structures, Data Engineering.
+I am driven by a curiosity to connect the **theoretical foundations of machine learning** with robust, high-impact engineering solutions.
 
-I have a keen interest in the Deep Learning sector of Data Science in fields like Automatic Seizure Detection in EEG Signals, which is the focus of my Honors Undergraduate Thesis. I believe a strong foundation in statistics and mathematics is essential to fully understand and effectively create accurate and interpretable machine learning models.
+### Professional Experience & Impact
 
+My experience focuses on delivering tangible results, optimizing enterprise systems, and working at the frontier of AI application:
 
-Beyond Academics
-======
+* **AI Associate Developer at Insurity, Inc. (Remote | Oct 2025 – Present):**
+    * Developed and deployed machine learning models and RAG/LLM prototypes, utilizing prompt engineering to create new insurance solutions and presenting Proof-of-Concepts (POCs) to senior engineers.
+    * Engineered custom Python and PowerShell automation scripts to migrate 175 enterprise SSRS reports to Power BI, resulting in an **83% reduction in processing time and achieving $6,480 in cost savings.**
+    * Designed a reusable **6-phase migration framework** that delivered a **38x ROI**.
 
-- BSA Eagle Scout
-    - My Eagle Scout project involved constructing two little library boxes for two parks, working collaboratively with the local fire department to create more community involvement and a hub for literary growth. 
-- CRU
-    - Youth Group Leader since 2024, aiding in leading the Lake Claire Community Group at UCF. I play percussion (cajon/drums) for the worship team!
-- Collegiate Mathematical Society at UCF
-    - Attended the American Mathematical Society (AMS) conference, which gathers mathematicians, researchers, and students to share cutting-edge research and explore new mathematical trends.
-    - STEM Day at UCF: Presented and engaged with K-12 students with the help of the Collegiate Mathematical Society about mathematical phenomena such as Hilbert’s Hotel Paradox, Monty Hall, and Möbius Strip.
+* **Research Assistant Intern at Design Interactive, Inc. (Orlando, FL | May 2024 – Aug 2024):**
+    * Gained hands-on experience in human systems integration research, assisting in experiment design, managing research integrity, and preparing statistical reports for the R&D team.
+
+### Core Technical Expertise
+
+My technical foundation is built on a strong core of programming, statistical theory, and deep learning frameworks:
+
+| Category | Skills & Tools | 
+| :--- | :--- | 
+| **Languages** | Python, SQL, JavaScript, R, Julia, C, Bash | 
+| **ML/Deep Learning** | PyTorch, TensorFlow, Scikit-learn, LLMs, RAG | 
+| **Data Engineering** | Data Pipelines, Git, Azure DevOps, AWS, SPARK | 
+| **Analytics/BI** | Power BI, Tableau, Streamlit, A/B Testing | 
+| **Concepts** | Statistical Modeling, Prompt Engineering, Predictive Analytics | 
+
+### Academic Research & Projects
+
+My commitment to deep learning is evidenced by my Honors Thesis and end-to-end applications:
+
+* **Honors Thesis: Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals:** This research bridges theory and application. I used **PyTorch** to develop a 1D CNN model (97% accuracy/0.99 AUC) and applied **Lipschitz bounds** and **DFT** to verify stability and interpret learned features.
+* **AI Driver Risk Scoring Platform:** A full-stack project where I engineered features, trained ML models (ROC-AUC 0.98), and built a **real-time risk dashboard** using **Streamlit** for telematics data.
+
+### Leadership & Community
+
+Outside of my technical work, I am committed to community service and analytical collaboration:
+
+* **Eagle Scout (BSA):** Led a project involving the construction of two community library boxes, fostering literacy and collaboration with the local Fire Department.
+* **Collegiate Mathematical Society:** Active member; contributed to analytical discussions and engaged the public by presenting mathematical concepts (like the Monty Hall Problem and Hilbert’s Hotel Paradox) at UCF’s STEM Day.
+* **CRU:** Youth Group Leader and musician (percussion/drums) for the worship team.
+
+### Let's Connect!
+
+I am actively seeking opportunities to leverage my skills in data science, machine learning, and automation. Feel free to connect with me via [Email](mailto:jacksonSmall@ucf.edu) or explore my code on [GitHub](https://github.com/jacksonSmall).
 
 
 
