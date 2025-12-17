@@ -22,9 +22,9 @@ repository               : "jacksonSmall/jacksonSmall.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  picture          : "/images/profile.jpg"
-  avatar           : "/images/profile.jpg"
-  image            : "/images/profile.jpg"
+  picture          : "/profile.jpg"
+  avatar           : '/profile.jpg"
+  image            : "/profile.jpg"
   name             : "Jackson Small"
   pronouns         : "he/him"  
   bio              : "I am in my 4th year earning a B.S. in Data Science at UCF."
