@@ -23,7 +23,7 @@ repository               : "jacksonSmall/jacksonSmall.github.io"
 author:
   # Biographic information
   picture          : "https://jacksonSmall.github.io/assets/images/profile_.jpg"
-  avatar           : 'https://jacksonSmall.github.io/assets/images/profile_.jpg"
+  avatar           : "https://jacksonSmall.github.io/assets/images/profile_.jpg"
   image            : "https://jacksonSmall.github.io/assets/images/profile_.jpg"
   name             : "Jackson Small"
   pronouns         : "he/him"  
