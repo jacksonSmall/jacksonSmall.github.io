@@ -4,77 +4,58 @@ permalink: /resume/
 author_profile: true
 ---
 
-## Jackson Small
+<div style="text-align: center; margin-bottom: 2em;">
+  <a href="{{ site.baseurl }}/files/cv.pdf" class="btn btn--primary btn--large" download>
+    <i class="fas fa-download"></i> Download CV (PDF)
+  </a>
+  <a href="mailto:jacksonSmall@ucf.edu" class="btn btn--inverse btn--large">
+    <i class="fas fa-envelope"></i> Contact Me
+  </a>
+</div>
 
-Email: jacksonSmall@ucf.edu | GitHub: [jacksonSmall](https://github.com/jacksonSmall) | Phone: 407-907-5072
+---
 
-***
+## Preview
 
-## Education
+<div style="width: 100%; height: 800px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 2em 0;">
+  <iframe src="{{ site.baseurl }}/files/cv.pdf" width="100%" height="100%" style="border: none;">
+    <p>Your browser does not support PDFs. 
+    <a href="{{ site.baseurl }}/files/cv.pdf">Download the PDF</a> instead.</p>
+  </iframe>
+</div>
 
-**UNIVERSITY OF CENTRAL FLORIDA, Burnett Honors College** | Orlando, Florida
-**Bachelor of Science in Data Science** | *August 2022 – May 2026*
+---
 
-* **GPA:** 3.806
+## Quick Summary
 
-***
+### Current Role
+**AI Associate Developer** at Insurity, Inc.  
+Developing RAG/LLM prototypes and migrating 175 enterprise reports to Power BI with 83% time reduction.
 
-## Experience
+### Education
+**B.S. in Data Science** (Minor in Statistics)  
+University of Central Florida, Burnett Honors College | GPA: 3.828/4.0
 
-### Insurity, Inc. — AI Associate Developer
+### Key Projects
+1. **Honors Thesis**: CNN-based EEG seizure detection (97% accuracy, 0.99 AUC)
+2. **Telematics Platform**: Real-time driver risk scoring with Streamlit (0.98 ROC-AUC)
+3. **HIPAA Audit System**: Enterprise-scale PHI tracking with zero-downtime deployment
 
-Remote | *October 2025 – Present*
+### Technical Stack
+Python • PyTorch • SQL • Azure AI • Power BI • Streamlit • RAG/LLMs
 
-* Developed and deployed machine learning models and RAG/LLM prototypes to support core product features, utilizing prompt engineering to create new insurance solutions and presenting Proof-of-Concepts (POCs) to senior engineers.
-* Engineered custom Python and PowerShell automation scripts to migrate 175 enterprise SSRS reports to Power BI, **reducing processing time by 83% and achieving \$6,480 in cost savings.**
-* Executed 1,225 technical modifications across 187 data source connections with a 100% verification pass rate, ensuring zero post-migration defects.
-* Designed a reusable 6-phase migration framework that delivered a **38x ROI**, establishing a repeatable process for future enterprise cloud transitions.
+---
 
-### Design Interactive, Inc. — Research Assistant Intern
-
-Orlando, Florida | *May 2024 – August 2024*
-
-* Assisted in the design and execution of experiments focused on human systems integration research.
-* Collaborated with the R&D team to ensure proper protocols and prepared statistical reports, maintaining data integrity to support the advancement of the research project.
-
-***
-
-## Projects
-
-*Note: Detailed descriptions and code links for these projects are available in the [Portfolio section](/portfolio/).*
-
-### Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals
-
-*(Undergraduate Honors Thesis)*
-
-* Presented and published an undergraduate Honors Thesis analyzing 1D CNNs for EEG seizure detection on the University of Bonn dataset.
-* Implemented a Butterworth noise filtering pipeline and used **PyTorch, SMOTE, DFT, and Lipschitz bounds** to ensure model stability, achieving **97% accuracy and 0.99 AUC**.
-* Identified the 22 Hz beta-wave band as the primary learned neurophysiological feature.
-
-### AI Driver Risk Scoring Platform
-
-* Fully developed an end-to-end Telematics risk scoring platform from simulated driving data.
-* Engineered features and trained ML models with performance ROC-AUC up to **0.98**.
-* Added gamification rewards for safe driving and built a real-time dashboard with live API updates using **Streamlit**.
-
-***
-
-## Skills
-
-### Core Competencies
-
-LLMs, RAG, Prompt Engineering, A/B Testing, Data Pipelines, Statistical Modeling, Predictive Analytics.
-
-### Languages & Frameworks
-
-**Languages:** Python, SQL, JavaScript, R, Julia, C, Bash.
-**Frameworks/Libraries:** PyTorch, TensorFlow, Scikit-learn, AWS, Azure DevOps, Power BI, Git, Streamlit.
-
-***
-
-## Leadership & Activities
-
-* **BSA Eagle Scout:** Achieved the highest rank in Boy Scouts.
-* **Burnett Honors Scholar**
-* **CRU:** Youth Group Leader; plays percussion (cajon/drums) for the worship team.
-* **Collegiate Mathematical Society:** Active member.
+<div style="text-align: center; margin-top: 3em; padding: 2em; background-color: #f8f9fa; border-radius: 8px;">
+  <h3>Let's Connect</h3>
+  <p>I'm actively seeking opportunities in ML Engineering and Data Science.</p>
+  <a href="mailto:jacksonSmall@ucf.edu" class="btn btn--primary">
+    <i class="fas fa-envelope"></i> Email Me
+  </a>
+  <a href="https://www.linkedin.com/in/jackson-small-ds" class="btn btn--info">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/jacksonSmall" class="btn btn--inverse">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+</div>
