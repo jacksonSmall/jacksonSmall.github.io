@@ -186,7 +186,7 @@ def compute_power_spectrum(signal, fs=173.6):
 
 ## Links & Resources
 
-- **💻 [GitHub Repository](https://github.com/jacksonSmall/seizure-detection-thesis)**
+- **💻 [GitHub Repository](https://github.com/jacksonSmall/EEG-Seizure-CNN-Thesis)**
 - **📧 [Contact for Collaboration](mailto:jacksonSmall@ucf.edu)**
 
 ---
