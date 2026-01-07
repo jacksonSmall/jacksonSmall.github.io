@@ -11,27 +11,23 @@ author_profile: true
 
 **Small, J.** (Under Review). *Theoretical Analysis of Convolutional Neural Networks for Automatic Seizure Detection in EEG Signals*. Honors Undergraduate Thesis. University of Central Florida, Burnett Honors College. 2025.
 
-**Abstract:** This thesis bridges the gap between deep learning application and mathematical theory for automatic seizure detection from EEG signals. We implement a 1D Convolutional Neural Network (CNN) achieving 97% accuracy and 0.99 AUC on the University of Bonn dataset. Critically, we establish Lipschitz stability bounds (K ≤ 1.5) ensuring model robustness under input perturbations, and employ Discrete Fourier Transform (DFT) analysis to identify the 22 Hz beta-wave band as the primary learned discriminative feature. Our work demonstrates that rigorous mathematical analysis can provide interpretability and reliability guarantees for deep learning models in clinical applications.
-
+**Abstract:** Epilepsy is a common brain disorder where neurons in the brain rapidly fire, causing recurring
+seizures. The brain activity during a seizure can be detected by electroencephalogram (EEG) sig-
+nals; however, this process is not only labor-intensive and time-consuming but is also subject to
+inter-rater variability, with a study showing only moderate agreement when diagnosing patients,
+even among experts. Convolutional Neural Networks (CNNs) are often proposed to detect seizures
+automatically, achieving high performance. The focus on performance comes at a cost of losing
+interpretability, leaving the model as effective but seen as a ’black box’. This thesis confronts the
+interpretability knowledge gap by conducting a theoretical analysis of a 1D CNN trained on the
+Bonn EEG Dataset. The analysis reveals how exactly the model learns, showing that the first con-
+volutional layer develops specific filters. Across most classification tasks, the model learned to fo-
+cus on the approximately 22 Hz beta-wave band as a key neurophysiological feature. Furthermore,
+the model’s stability was quantified using the Lipschitz bound. This work successfully bridges the
+gap between high-performance metrics and theoretical understanding, providing a framework for
+interpreting CNN based seizure detection.
 **Keywords:** Deep Learning, EEG, Seizure Detection, Lipschitz Bounds, Frequency Domain Analysis, CNN Stability
 
 [View Thesis Details](/portfolio/thesis/) | [GitHub Repository](https://github.com/jacksonSmall/seizure-detection-thesis)
-
----
-
-## Presentations
-
-**Small, J.** (September 2025). "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals." Poster presentation at Burnett Honors College Family Weekend, University of Central Florida, Orlando, FL.
-
-**Abstract:** Presented findings from undergraduate honors thesis to faculty, students, and families. Demonstrated CNN architecture, Lipschitz stability analysis, and frequency domain interpretation of learned features. Poster included confusion matrices, ROC curves, and power spectrum comparisons.
-
----
-
-## Technical Reports & Projects
-
-**Small, J.** (December 2025). "E-Commerce Shopper Behavior Analysis: Predicting Purchase Intent Using Ensemble Methods." Academic Project Report, ISC 4242: Data Science II, University of Central Florida.
-
-**Small, J.** (September 2025). "AI Driver Risk Scoring Platform: End-to-End Telematics ML System." Independent Project. [GitHub Repository](https://github.com/jacksonSmall/Small_Jackson_TelematicsInsurance)
 
 ---
 
