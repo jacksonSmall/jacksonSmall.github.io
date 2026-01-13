@@ -7,9 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
-## Preprints & Under Review
+## Publication and Citation
 
-**Small, J.** (Under Review). *Theoretical Analysis of Convolutional Neural Networks for Automatic Seizure Detection in EEG Signals*. Honors Undergraduate Thesis. University of Central Florida, Burnett Honors College. 2025.
+**Small, Jackson T.**, "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals" (2025). Honors Undergraduate Theses. 462.
+https://stars.library.ucf.edu/hut2024/462
+
 
 **Abstract:** Epilepsy is a common brain disorder where neurons in the brain rapidly fire, causing recurring
 seizures. The brain activity during a seizure can be detected by electroencephalogram (EEG) sig-
@@ -35,17 +37,19 @@ interpreting CNN based seizure detection.
 
 If you use this work in your research, please cite:
 
+
 ```bibtex
 @thesis{small2025cnn,
-  author = {Small, Jackson},
-  title = {Theoretical Analysis of Convolutional Neural Networks for Automatic Seizure Detection in EEG Signals},
-  school = {University of Central Florida},
-  year = {2025},
-  type = {Undergraduate Honors Thesis},
-  note = {Under Review}
+  author  = {Small, Jackson T.},
+  title   = {Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals},
+  school  = {University of Central Florida},
+  year    = {2025},
+  type    = {Honors Undergraduate Theses},
+  number  = {462},
+  url     = {https://stars.library.ucf.edu/hut2024/462}
 }
-```
 
+```
 ---
 
 ## Research Interests
