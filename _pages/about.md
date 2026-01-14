@@ -100,15 +100,15 @@ I pursue rigorous mathematical foundations for ML models:
 ## Featured Projects
 
 ### 🧠 Theoretical Analysis of CNNs for Seizure Detection
-**Undergraduate Honors Thesis | Fall 2025**
+**Published Honors Undergraduate Thesis | Fall 2025**
 
 Bridged deep learning application and mathematical theory to detect epileptic seizures from EEG signals. Achieved 97% accuracy while establishing Lipschitz stability bounds (K ≤ 1.5) and identifying the 22 Hz beta-wave band as the primary discriminative feature.
 
 - **Technologies:** PyTorch (MPS), SMOTE, DFT, Butterworth Filtering
 - **Dataset:** University of Bonn EEG (100 seizure + 100 healthy recordings)
-- **Recognition:** Presented at Burnett Honors College Family Weekend, manuscript under review
+- **Recognition:** Published in UCF STARS Digital Repository, presented at Burnett Honors College Family Weekend
 
-[View Project Details](/portfolio/thesis/) | [GitHub Repository](https://github.com/jacksonSmall/seizure-detection-thesis)
+[View Project Details](/portfolio/thesis/) | [Read Published Thesis](https://stars.library.ucf.edu/hut2024/462) | [GitHub Repository](https://github.com/jacksonSmall/seizure-detection-thesis)
 
 ### 🚗 AI Driver Risk Scoring Platform
 **Independent Project | September 2025**
@@ -210,6 +210,11 @@ Led a community service project constructing two library boxes in collaboration 
 
 Observed Tolls Operations and incident response protocols, analyzing how the center utilizes data science to detect and resolve real-time road issues.
 
+### Volunteer: Spring of Life UMC
+*August 2025 – Present | Orlando, FL*
+
+Verify weekly offering contributions and execute secure bank deposits to maintain financial integrity.
+
 ---
 
 ## What Drives Me
@@ -265,5 +270,6 @@ I'm always open to discussing ML engineering, research collaborations, or just g
 
 **Fun Facts:**
 - I run Hyprland on Arch Linux (btw) and optimize PyTorch code for Apple Silicon (MPS)
-- I can play drums, cajon, and eletric guitar!
-- Favorite statistical metric: Z-Scores 😤💯
+- My go-to analogy for explaining complex ML concepts: physics kinematics
+- I can play drums, cajon, and occasionally debug my own Neovim config
+- Favorite statistical test: ANOVA (there's something satisfying about F-statistics)
