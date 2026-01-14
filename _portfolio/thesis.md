@@ -8,7 +8,7 @@ collection: portfolio
 
 This project represents my Undergraduate Honors Thesis at UCF, where I bridged the gap between deep learning application and mathematical theory to detect seizure activity in EEG signals. The research was presented at the Burnett Honors College Family Weekend and is currently under review for publication.
 
-**Status:** Under Review | **Presented:** September 2025 | **Defended:** Fall 2025
+**Status:** Published | **Presented:** September 2025 | **Defended:** Fall 2025
 
 ---
 
@@ -179,17 +179,15 @@ def compute_power_spectrum(signal, fs=173.6):
 
 - ✅ **Thesis Defense:** Successfully defended before faculty committee
 - 🎤 **Presentation:** Selected for Burnett Honors College Family Weekend (Sept. 2025)
-- 📄 **Publication:** Manuscript under review at UCF Honors Repository
+- 📄 **Published:** Available in UCF STARS Digital Repository
 - 🏆 **Honors Candidate:** Recognized for bridging theory and application
 
 ---
 
 ## Links & Resources
 
-- **💻 [GitHub Repository!](https://github.com/jacksonSmall/EEG-Seizure-CNN-Thesis)**
-- **📝 [Link to Publication!](https://github.com/jacksonSmall/EEG-Seizure-CNN-Thesis/blob/main/THEORETICAL%20ANALYSIS%20OF%20CNNS%20FOR%20AUTOMATIC%20SEIZURE%20DETECTION%20IN%20EEG%20SIGNALS.pdf)**
-- **📧 [Contact for Collaboration!](mailto:jacksonSmall@ucf.edu)**
-- 
+- **💻 [GitHub Repository](https://github.com/jacksonSmall/seizure-detection-thesis)**
+- **📧 [Contact for Collaboration](mailto:jacksonSmall@ucf.edu)**
 
 ---
 
@@ -205,10 +203,12 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @thesis{small2025cnn,
-  author = {Small, Jackson},
-  title = {Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals},
-  school = {University of Central Florida},
-  year = {2025},
-  type = {Undergraduate Honors Thesis}
+  author  = {Small, Jackson T.},
+  title   = {Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals},
+  school  = {University of Central Florida},
+  year    = {2025},
+  type    = {Honors Undergraduate Theses},
+  number  = {462},
+  url     = {https://stars.library.ucf.edu/hut2024/462}
 }
 ```
