@@ -37,7 +37,7 @@ Developing RAG/LLM prototypes and migrating 175 enterprise reports to Power BI w
 University of Central Florida, Burnett Honors College | GPA: 3.828/4.0
 
 ### Key Projects
-1. **Honors Thesis**: CNN-based EEG seizure detection (97% accuracy, 0.99 AUC)
+1. **Honors Thesis** (Published): CNN-based EEG seizure detection (97% accuracy, 0.99 AUC)
 2. **Telematics Platform**: Real-time driver risk scoring with Streamlit (0.98 ROC-AUC)
 3. **HIPAA Audit System**: Enterprise-scale PHI tracking with zero-downtime deployment
 
