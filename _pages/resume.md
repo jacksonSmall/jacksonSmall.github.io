@@ -29,8 +29,8 @@ author_profile: true
 ## Quick Summary
 
 ### Current Role
-**AI Associate Developer** at Insurity, Inc.  
-Developing RAG/LLM prototypes and migrating 175 enterprise reports to Power BI with 83% time reduction.
+**AI Associate Developer** at Insurity, Inc.
+Developing RAG/LLM prototypes and engineering Python automation that achieved $700,000 in cost avoidance with 17x faster migration velocity.
 
 ### Education
 **B.S. in Data Science** (Minor in Statistics)  

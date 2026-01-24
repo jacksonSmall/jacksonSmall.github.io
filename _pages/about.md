@@ -9,7 +9,7 @@ redirect_from:
 
 ## Hello! I'm Jackson Small
 
-I am a Data Science student at the **University of Central Florida's Burnett Honors College** (GPA: 3.828/4.0, expected graduation May 2026) and an **AI Associate Developer at Insurity, Inc.**, where I build RAG/LLM prototypes and engineer enterprise-scale data migrations that have delivered a **38x ROI**.
+I am a Data Science student at the **University of Central Florida's Burnett Honors College** (GPA: 3.828/4.0, expected graduation May 2026) and an **AI Associate Developer at Insurity, Inc.**, where I build RAG/LLM prototypes and engineer enterprise-scale data migrations that have delivered **$700,000 in cost avoidance** with **17x faster velocity**.
 
 My work bridges **theoretical rigor** and **production engineering**—from proving Lipschitz stability bounds in CNNs for my Honors Thesis to deploying HIPAA-compliant audit systems handling 4,800+ commits. I'm passionate about applying statistical modeling and deep learning to solve high-impact problems in healthcare, insurance, and beyond.
 
@@ -26,10 +26,10 @@ I develop end-to-end ML systems that go from research to production:
 
 ### 📊 Data Engineering & Analytics
 I architect scalable data pipelines and analytics systems:
-- **Enterprise Migration:** 175 SSRS reports → Power BI (83% time reduction, $6,480 savings)
-- **Data Infrastructure:** 1,225 technical modifications across 187 data sources (100% verification pass rate)
+- **Enterprise Migration:** 175 SSRS reports → Power BI in 3 weeks vs. 3-4 months projected ($700,000 cost avoidance, 17x faster velocity)
+- **Data Infrastructure:** 1,225 technical modifications across 187 SQL database connections (100% verification pass rate, zero production incidents)
 - **Big Data:** Experience with SPARK, Azure DevOps, SQL optimization
-- **Compliance:** HIPAA-compliant audit trails with real-time PHI access tracking
+- **Compliance:** HIPAA-compliant audit infrastructure covering 23 PHI tables (≥95% attribution accuracy, 85-96% storage optimization)
 
 ### 🔬 Research & Theoretical Analysis
 I pursue rigorous mathematical foundations for ML models:
@@ -46,16 +46,16 @@ I pursue rigorous mathematical foundations for ML models:
 *Remote | October 2025 – Present*
 
 **Key Achievements:**
-- 🚀 **38x ROI** on enterprise report migration framework
-- 💰 **$6,480 cost savings** through custom Python/PowerShell automation
-- ✅ **100% verification pass rate** across 187 data source connections
-- 🔒 **Zero-downtime deployment** of HIPAA-compliant audit system
+- 💰 **$700,000 in cost avoidance** through Python automation (17x faster than industry standard)
+- 🚀 **3 weeks vs. 3-4 months** to migrate 175 enterprise reports to Power BI
+- ✅ **100% verification pass rate** across 187 SQL database connections with zero production incidents
+- 🔒 **HIPAA-compliant audit infrastructure** covering 23 PHI tables (≥95% attribution accuracy, 85-96% storage optimization)
 
 **Technical Contributions:**
-- Developed ML models and RAG/LLM prototypes for insurance domain
-- Engineered custom automation scripts reducing processing time by 83%
-- Architected audit trail system instrumenting 66 classes and 4,800+ commits
-- Presented Proof-of-Concepts (POCs) to senior engineering teams
+- Developed and deployed machine learning models and RAG/LLM prototypes to support core product features
+- Engineered Python automation tools to migrate 175 SSRS reports, achieving $700,000 in cost avoidance with 17x faster migration velocity
+- Executed 1,225 technical modifications across 187 SQL database connections with 100% verification pass rate
+- Built comprehensive HIPAA audit infrastructure covering 23 PHI tables with SQL triggers, role-based access controls, and field masking
 
 ### Design Interactive, Inc. | Research Assistant Intern
 *Orlando, FL | May 2024 – August 2024*
