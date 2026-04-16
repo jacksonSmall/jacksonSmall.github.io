@@ -1,0 +1,185 @@
+{
+  "basics": {
+    "name": "Jackson Small",
+    "email": "jacksonSmall@ucf.edu",
+    "phone": "407-907-5072",
+    "website": "https://jacksonsmall.github.io/",
+    "summary": "Data Science student at UCF Burnett Honors College (GPA 3.83). Admitted UCF M.S. Statistics and Data Science (Fall 2026) with Graduate Teaching Assistantship and Graduate Dean's Fellowship. First Data Science undergraduate to publish in UCF STARS Honors Undergraduate Thesis repository.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Orlando",
+      "countryCode": "US",
+      "region": "FL"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "jacksonSmall",
+        "url": "https://github.com/jacksonSmall"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "jackson-small-ds",
+        "url": "https://linkedin.com/in/jackson-small-ds/"
+      },
+      {
+        "network": "HuggingFace",
+        "username": "jsmall12",
+        "url": "https://huggingface.co/jsmall12"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Insurity, Inc.",
+      "position": "AI Associate Developer",
+      "website": "",
+      "startDate": "2025-10-01",
+      "endDate": "",
+      "summary": "Full-stack enterprise development — RAG/LLM development, big data migrations, HIPAA compliance infrastructure, SDK integrations.",
+      "highlights": [
+        "Built and deployed RAG/LLM prototypes using Anthropic, OpenAI, and Replit APIs for core insurance product features",
+        "Migrated 175 SSRS reports to Power BI in 3 weeks ($700,000 cost avoidance, 17x industry speed, 1.1M+ lines XML, 187 DB connections, 100% pass rate)",
+        "Architected dual-layer HIPAA audit system for 23 PHI tables (9,196 lines C#/SQL), 85-96% storage reduction, zero audit gaps",
+        "Delivered enterprise SDK integration (10,723 LOC, 334 automated test checks) in 22 days vs. 3-6 month industry standard"
+      ]
+    },
+    {
+      "company": "Design Interactive, Inc.",
+      "position": "Research Assistant (Data Science) Intern",
+      "website": "",
+      "startDate": "2024-05-01",
+      "endDate": "2024-08-01",
+      "summary": "Human systems research — VR/AR simulations and behavioral data analysis.",
+      "highlights": [
+        "Built automated data validation pipelines in Python and SQL for large human-systems research datasets",
+        "Led QA on VR/AR Unity simulations; validated eye-tracking software for participant gaze capture",
+        "Conducted statistical analysis on behavioral data across experimental conditions; led pilot studies (~300 participants)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Central Florida",
+      "area": "M.S. in Statistics and Data Science",
+      "studyType": "Master of Science",
+      "startDate": "2026-08-01",
+      "endDate": "2028-05-01",
+      "gpa": null,
+      "courses": [],
+      "note": "Graduate Teaching Assistant (20 hrs/week); Graduate Teaching Assistantship ($15,000) + Graduate Dean's Fellowship ($5,000 competitive merit award); full tuition remission + health insurance"
+    },
+    {
+      "institution": "University of Central Florida, Burnett Honors College",
+      "area": "B.S. in Data Science, Minor in Statistics",
+      "studyType": "Bachelor of Science",
+      "startDate": "2022-08-01",
+      "endDate": "2026-05-01",
+      "gpa": "3.83",
+      "courses": [
+        "Applied Time Series (STA 4852)",
+        "Statistical Learning (STA 4364)",
+        "Survival Analysis (STA 4365)",
+        "Stochastic Processes (STA 4322)",
+        "Biostatistics (STA 4173)",
+        "Regression (STA 4164)",
+        "Unsupervised Learning (STA 4724)",
+        "Multivariate Analysis (ISC 4241)",
+        "Mathematical Modeling (MAP 4191)",
+        "Big Data Analytics (STA 4163)"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "level": "Advanced",
+      "keywords": ["Python", "R", "SQL", "Julia", "Bash", "JavaScript", "C", "PowerShell"]
+    },
+    {
+      "name": "ML & Deep Learning",
+      "level": "Advanced",
+      "keywords": ["PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "PyTorch Geometric", "QLoRA/PEFT", "Hugging Face Transformers", "SMOTE"]
+    },
+    {
+      "name": "LLM & NLP",
+      "level": "Advanced",
+      "keywords": ["RAG systems", "LLM fine-tuning", "prompt engineering", "Anthropic API", "OpenAI API", "Azure OpenAI", "Llama", "Qwen", "BioMistral"]
+    },
+    {
+      "name": "Data Science",
+      "level": "Advanced",
+      "keywords": ["Pandas", "NumPy", "SciPy", "Statsmodels", "Matplotlib", "Seaborn", "Plotly", "SHAP"]
+    },
+    {
+      "name": "Statistics & Methods",
+      "level": "Advanced",
+      "keywords": ["Time Series", "Survival Analysis", "Stochastic Processes", "Bayesian Methods", "Multivariate Analysis", "Signal Processing", "A/B Testing", "Cross-Validation"]
+    },
+    {
+      "name": "Tools & Cloud",
+      "level": "Proficient",
+      "keywords": ["Azure", "AWS", "Docker", "Git/GitHub", "FastAPI", "Streamlit", "Power BI", "SLURM/HPC", "Jupyter", "VS Code"]
+    }
+  ],
+  "languages": [],
+  "interests": [],
+  "references": [],
+  "publications": [
+    {
+      "name": "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals",
+      "publisher": "UCF STARS Honors Undergraduate Theses",
+      "releaseDate": "2025-01-01",
+      "website": "https://stars.library.ucf.edu/hut2024/462",
+      "summary": "First Data Science undergraduate to publish in the UCF STARS Honors Undergraduate Thesis repository. Built 1D CNN with Butterworth filtering pipeline achieving 97% accuracy and 0.99 AUC on EEG seizure detection. Formally proved Lipschitz stability bounds (L = 24.72). Advised by Dr. Chudamani Poudyal (SDMSS, UCF)."
+    }
+  ],
+  "presentations": [
+    {
+      "name": "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals",
+      "event": "UCF Student Scholar Symposium",
+      "date": "2026-03-01",
+      "location": "Orlando, FL, USA",
+      "description": "Poster presentation of Honors Undergraduate Thesis research"
+    },
+    {
+      "name": "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals",
+      "event": "Burnett Honors College Family Weekend",
+      "date": "2025-09-01",
+      "location": "Orlando, FL, USA",
+      "description": "Poster presentation of Honors Undergraduate Thesis research"
+    }
+  ],
+  "teaching": [],
+  "portfolio": [
+    {
+      "name": "DataSci-Coder: Fine-Tuned LLM for Data Science",
+      "category": "portfolio",
+      "date": "2026-03-01",
+      "url": "/portfolio/datasci-coder/",
+      "description": "Fine-tuned Qwen2.5-Coder-14B via QLoRA on 10,795 curated DS examples. 93.3% instruction compliance vs 91.4% base. Published on HuggingFace."
+    },
+    {
+      "name": "Research Project (Coming Soon)",
+      "category": "portfolio",
+      "date": "2026-03-01",
+      "url": "/portfolio/aim-lab/",
+      "description": "Active research project — details to be published upon completion."
+    },
+    {
+      "name": "Honors Thesis: CNN EEG Seizure Detection",
+      "category": "portfolio",
+      "date": "2025-11-01",
+      "url": "/portfolio/thesis/",
+      "description": "Published UCF Honors thesis. 97% accuracy, 0.99 AUC, Lipschitz stability bounds (L=24.72)."
+    },
+    {
+      "name": "AI Driver Risk Scoring Platform",
+      "category": "portfolio",
+      "date": "2025-11-01",
+      "url": "/portfolio/telematics/",
+      "description": "End-to-end telematics platform with 0.98 ROC-AUC, 47 engineered features, real-time Streamlit dashboard."
+    }
+  ]
+}

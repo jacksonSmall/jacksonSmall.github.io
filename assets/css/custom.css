@@ -1,0 +1,333 @@
+/* Custom Portfolio Enhancements - Minimal but Confident */
+
+/* Color Palette */
+:root {
+  --color-primary: #2c5f2d;
+  --color-blue: #4A90E2;
+  --color-purple: #8B5CF6;
+  --color-orange: #F59E0B;
+  --color-teal: #14B8A6;
+  --color-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --color-gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* 1. Animated Hover Effects on Cards */
+.featured-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid #e5e7eb !important;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.15);
+  border-color: var(--color-blue) !important;
+}
+
+/* Individual card accent colors */
+.featured-card:nth-child(1):hover {
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.2);
+  border-color: var(--color-orange) !important;
+}
+
+.featured-card:nth-child(2):hover {
+  box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
+  border-color: var(--color-purple) !important;
+}
+
+.featured-card:nth-child(3):hover {
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.2);
+  border-color: var(--color-blue) !important;
+}
+
+/* 2. Multi-Color Skill Badges */
+.skill-badge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.skill-badge:nth-child(1), .skill-badge:nth-child(2) {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
+.skill-badge:nth-child(3), .skill-badge:nth-child(4) {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+}
+
+.skill-badge:nth-child(5), .skill-badge:nth-child(6) {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  color: #4338ca;
+}
+
+.skill-badge:nth-child(7), .skill-badge:nth-child(8) {
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);
+  color: #115e59;
+}
+
+.skill-badge:nth-child(9), .skill-badge:nth-child(10) {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #1b5e20;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Hero Section with Subtle Gradient */
+.hero-section {
+  animation: fadeInUp 0.8s ease-out;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e0f2fe 100%) !important;
+  border-radius: 16px !important;
+  padding: 3em 2em !important;
+  margin: 1em 0 2em 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle section backgrounds */
+.fade-in-section:nth-of-type(odd) {
+  background: linear-gradient(to bottom, transparent 0%, #fafafa 50%, transparent 100%);
+  padding: 2em 0;
+  margin: 2em 0;
+  border-radius: 8px;
+}
+
+/* 4. Metric Counter Animation with Colors */
+.metric-value {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+#metric-gpa {
+  color: #8B5CF6 !important;
+}
+
+#metric-cost {
+  color: #2c5f2d !important;
+}
+
+#metric-paper {
+  color: #4A90E2 !important;
+}
+
+.metric-value:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* 5. Smooth Scroll Animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 6. Tech Logo Styling */
+.tech-logo {
+  width: 48px;
+  height: 48px;
+  margin: 0.5em;
+  transition: transform 0.2s ease;
+  filter: grayscale(20%);
+}
+
+.tech-logo:hover {
+  transform: scale(1.15);
+  filter: grayscale(0%);
+}
+
+/* 7. Contact CTA with Subtle Gradient */
+.cta-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%) !important;
+  border: 2px solid #bfdbfe !important;
+}
+
+/* Button hover enhancements */
+.btn--primary {
+  background: linear-gradient(135deg, #2c5f2d 0%, #4caf50 100%) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #1a4d1b 0%, #2c5f2d 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(44, 95, 45, 0.3) !important;
+}
+
+.btn--info {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn--info:hover {
+  background: linear-gradient(135deg, #357ABD 0%, #2868A6 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.3) !important;
+}
+
+.btn--inverse:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 8. Code Snippet Styling */
+.highlight {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 9. Certification Badge Styling with Top Border Colors */
+.cert-badge {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border-top: 4px solid transparent !important;
+}
+
+.cert-badge:nth-child(1) {
+  border-top-color: #00A4EF !important; /* Microsoft Blue */
+}
+
+.cert-badge:nth-child(2) {
+  border-top-color: #43B02A !important; /* Anaconda Green */
+}
+
+.cert-badge:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 10. Impact Chart Styling with Individual Colors */
+.impact-bar {
+  height: 30px;
+  border-radius: 5px;
+  transition: width 1.5s ease-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.impact-item:nth-child(1) .impact-bar {
+  background: linear-gradient(90deg, #2c5f2d 0%, #4caf50 100%);
+}
+
+.impact-item:nth-child(2) .impact-bar {
+  background: linear-gradient(90deg, #8B5CF6 0%, #a78bfa 100%);
+}
+
+.impact-item:nth-child(3) .impact-bar {
+  background: linear-gradient(90deg, #4A90E2 0%, #60a5fa 100%);
+}
+
+.impact-item:nth-child(4) .impact-bar {
+  background: linear-gradient(90deg, #F59E0B 0%, #fbbf24 100%);
+}
+
+.impact-chart {
+  margin: 2em 0;
+}
+
+.impact-item {
+  margin-bottom: 1.5em;
+}
+
+.impact-label {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 11. LinkedIn Badge Container */
+.linkedin-badge-container {
+  display: inline-block;
+  margin: 1em 0;
+}
+
+/* 12. GitHub Repo Cards with Accent Colors */
+.repo-card {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5em;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #8B5CF6 0%, #4A90E2 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.repo-card:hover::before {
+  transform: scaleX(1);
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+  border-color: #8B5CF6;
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.15);
+}
+
+/* 13. Minimalist Grid Layout */
+.minimal-grid {
+  display: grid;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+/* 14. Button Hover Enhancements */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* 15. Responsive Adjustments */
+@media (max-width: 768px) {
+  .tech-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Stack GitHub activity grid on mobile */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
