@@ -9,8 +9,8 @@
 
 main:
   
-  - title: "Talks"
-    url: /talks/
+  # - title: "Talks"
+  #   url: /talks/
 
   - title: "Courses"
     url: /courses/
@@ -30,8 +30,8 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Now"
-    url: /now/
+  # - title: "Now"
+  #   url: /now/
 
     
   # - title: "CV"
