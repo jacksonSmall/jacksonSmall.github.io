@@ -44,7 +44,7 @@ author_profile: true
   <div style="padding: 1.5em; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-radius: 12px; border-left: 4px solid #8B5CF6;">
     <h3 style="margin-top: 0; color: #4338ca;">🎓 Education</h3>
     <p style="margin: 0;"><strong>B.S. in Data Science</strong> (Minor in Statistics)</p>
-    <p style="font-size: 0.9em; color: #666;">University of Central Florida, Burnett Honors College<br><strong>GPA: 3.828/4.0</strong></p>
+    <p style="font-size: 0.9em; color: #666;">University of Central Florida, Burnett Honors College<br><strong>GPA: 3.83/4.0</strong></p>
   </div>
 
   <!-- Key Projects -->
@@ -53,7 +53,7 @@ author_profile: true
     <ul style="margin: 0; padding-left: 1.2em; font-size: 0.9em; color: #666;">
       <li><strong>Honors Thesis</strong> (Published): CNN-based EEG seizure detection (97% accuracy, 0.99 AUC, L = 24.72)</li>
       <li><strong>Telematics Platform</strong>: Real-time driver risk scoring with Streamlit (0.98 ROC-AUC)</li>
-      <li><strong>HIPAA Audit System</strong>: Enterprise-scale PHI tracking with ≥95% attribution accuracy</li>
+      <li><strong>HIPAA Audit System</strong>: Enterprise-scale PHI tracking across 23 PHI tables, 85-96% storage reduction</li>
     </ul>
   </div>
 

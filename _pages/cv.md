@@ -16,7 +16,6 @@ redirect_from:
 
 **University of Central Florida** — M.S. in Statistics and Data Science (Fall 2026 – Expected May 2028)
 - Graduate Teaching Assistant (20 hrs/week)
-- Graduate Teaching Assistantship ($15,000) + Graduate Dean's Fellowship ($5,000 competitive merit award)
 - Full tuition remission + health insurance
 
 **University of Central Florida, Burnett Honors College** — B.S. in Data Science, Minor in Statistics (May 2026)

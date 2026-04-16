@@ -4,7 +4,7 @@
     "email": "jacksonSmall@ucf.edu",
     "phone": "407-907-5072",
     "website": "https://jacksonsmall.github.io/",
-    "summary": "Data Science student at UCF Burnett Honors College (GPA 3.83). Admitted UCF M.S. Statistics and Data Science (Fall 2026) with Graduate Teaching Assistantship and Graduate Dean's Fellowship. First Data Science undergraduate to publish in UCF STARS Honors Undergraduate Thesis repository.",
+    "summary": "Data Science student at UCF Burnett Honors College (GPA 3.83). Admitted UCF M.S. Statistics and Data Science (Fall 2026) with Graduate Teaching Assistantship. First Data Science undergraduate to publish in UCF STARS Honors Undergraduate Thesis repository.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -68,7 +68,7 @@
       "endDate": "2028-05-01",
       "gpa": null,
       "courses": [],
-      "note": "Graduate Teaching Assistant (20 hrs/week); Graduate Teaching Assistantship ($15,000) + Graduate Dean's Fellowship ($5,000 competitive merit award); full tuition remission + health insurance"
+      "note": "Graduate Teaching Assistant (20 hrs/week); full tuition remission + health insurance"
     },
     {
       "institution": "University of Central Florida, Burnett Honors College",

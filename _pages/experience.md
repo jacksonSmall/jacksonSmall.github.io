@@ -19,7 +19,7 @@ author_profile: true
   <li><strong style="color: #2c5f2d;">$700,000 in cost avoidance</strong> through Python automation (17x faster than industry standard)</li>
   <li><strong>3 weeks vs. 3-4 months</strong> to migrate 175 enterprise reports to Power BI</li>
   <li><strong>100% verification pass rate</strong> across 187 SQL database connections with zero production incidents</li>
-  <li><strong>HIPAA-compliant audit infrastructure</strong> covering 23 PHI tables (≥95% attribution accuracy, 85-96% storage optimization)</li>
+  <li><strong>HIPAA-compliant audit infrastructure</strong> covering 23 PHI tables (85-96% storage reduction, zero audit gaps)</li>
 </ul>
 
 <h4 style="color: #2c5f2d; margin-top: 1.5em;">Technical Contributions:</h4>
@@ -47,9 +47,9 @@ author_profile: true
 <p style="color: #666; font-style: italic;">Orlando, FL | May 2024 – August 2024</p>
 
 <ul>
-  <li>Designed and executed experiments for human systems integration research</li>
-  <li>Prepared statistical reports maintaining data integrity</li>
-  <li>Collaborated with R&D team on research protocols</li>
+  <li>Built automated data validation pipelines in Python and SQL for large human-systems research datasets</li>
+  <li>Led QA on VR/AR Unity simulations; deployed builds to hardware; validated eye-tracking software for participant gaze capture</li>
+  <li>Conducted statistical analysis on behavioral data across experimental conditions; led pilot studies (~300 participants)</li>
 </ul>
 
 <div style="margin-top: 1em;">
@@ -70,17 +70,17 @@ author_profile: true
 <p style="color: #666; font-style: italic;">Bachelor of Science in Data Science (Minor in Statistics) | Aug. 2022 – May 2026</p>
 
 <ul>
-  <li><strong style="color: #8B5CF6;">GPA: 3.828/4.0</strong></li>
+  <li><strong style="color: #8B5CF6;">GPA: 3.83/4.0</strong></li>
   <li><strong>Honors:</strong> President's Honor Roll & Dean's List (Multiple Semesters)</li>
   <li><strong>Relevant Coursework:</strong> Big Data Analytics, Statistical Learning, Applied Time Series, Mathematical Modeling of Data, Statistical Theory I & II, Matrix & Linear Algebra</li>
 </ul>
 
 <h4 style="color: #8B5CF6; margin-top: 1.5em;">Key Courses:</h4>
 <ul>
-  <li>STA 4724: Big Data Analytics Methods</li>
-  <li>STA 4364/4365: Statistics for Data Science & AI I/II</li>
-  <li>STA 4321/4322: Statistical Theory I/II</li>
-  <li>ISC 4241/4242: Data Science I/II</li>
+  <li>STA 4241: Statistical Learning | STA 4321/4322: Statistical Theory I/II</li>
+  <li>STA 4364/4365: Statistics & Data Science AI I/II</li>
+  <li>STA 4724: Big Data Analytics Methods | STA 4852: Applied Time Series</li>
+  <li>ISC 4241/4242: Data Science I/II | ISC 4551: Data Graphics & Visualization</li>
   <li>MAP 4191: Mathematical Modeling of Data</li>
 </ul>
 
@@ -116,7 +116,7 @@ author_profile: true
   <!-- Epilepsy Foundation -->
   <div style="padding: 1.5em; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; border-left: 4px solid #F59E0B;">
     <h3 style="margin-top: 0; color: #92400e;">Epilepsy Foundation Ambassador</h3>
-    <p style="color: #666; font-style: italic; font-size: 0.9em;">2021 – Present</p>
+    <p style="color: #666; font-style: italic; font-size: 0.9em;">2019 – Present</p>
     <p>Advocate for patient-centric research and clinical trial representation. My personal connection to epilepsy drives my work on EEG seizure detection and accessibility in healthcare AI.</p>
     <ul>
       <li>Engage with patients and families to raise awareness</li>
@@ -145,10 +145,10 @@ author_profile: true
 
   <!-- Mathematical Society -->
   <div style="padding: 1.5em; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-radius: 12px; border-left: 4px solid #8B5CF6;">
-    <h3 style="margin-top: 0; color: #4338ca;">Collegiate Mathematical Society</h3>
+    <h3 style="margin-top: 0; color: #4338ca;">Pegasus Math Club</h3>
     <p style="color: #666; font-style: italic; font-size: 0.9em;">Active Member</p>
     <ul>
-      <li>Engaged the public at UCF STEM Day presenting the Monty Hall Problem and Hilbert's Hotel Paradox</li>
+      <li>Engaged the public at UCF STEM Day presenting the Monty Hall Problem, Hilbert's Hotel Paradox, and the Möbius Strip</li>
       <li>Attended AMS Sectional Meeting (Florida State University, March 2024)</li>
       <li>Collaborate on analytical discussions and mathematical modeling</li>
     </ul>

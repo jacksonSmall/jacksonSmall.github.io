@@ -60,8 +60,11 @@ author_profile: true
 
 <p style="margin-top: 0;"><strong>Small, J. T.</strong> (September 2025). "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals." Poster presentation at Burnett Honors College Family Weekend, University of Central Florida, Orlando, FL.</p>
 
-<h4 style="color: #4A90E2; margin-top: 1.5em;">Abstract:</h4>
-<p>Presented findings from undergraduate honors thesis to faculty, students, and families. Demonstrated CNN architecture, Lipschitz stability analysis, and frequency domain interpretation of learned features. Poster included proposed CNN architecture, hypothesis, and theoretical interpretation.</p>
+</div>
+
+<div class="featured-card" style="padding: 2em; background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%); border-radius: 12px; margin: 2em 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #4A90E2;">
+
+<p style="margin-top: 0;"><strong>Small, J. T.</strong> (March 2026). "Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals." Poster presentation at UCF Student Scholar Symposium, University of Central Florida, Orlando, FL.</p>
 
 </div>
 

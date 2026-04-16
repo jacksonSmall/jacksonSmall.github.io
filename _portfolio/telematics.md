@@ -279,11 +279,6 @@ if uploaded_file:
 - **False Positive Rate:** 4.3% (minimizes unfair penalties)
 - **Inference Time:** <50ms per trip (real-time capable)
 
-### Business Metrics
-- **Premium Differentiation:** 30% discount for safest drivers
-- **User Engagement:** 78% return rate for dashboard
-- **Behavioral Change:** 23% reduction in harsh braking after 1 month
-
 ---
 
 ## Challenges & Solutions
@@ -316,7 +311,7 @@ Python • Scikit-learn • Streamlit • Pandas • NumPy • Plotly • OpenSt
 
 ## Links & Resources
 
-- **💻 [GitHub Repository](https://github.com/jacksonSmall/Small_Jackson_TelematicsInsurance)**
+- **💻 [GitHub Repository](https://github.com/jacksonSmall/AI-Driver-Risk-Scoring-Platform)**
 - **📧 [Collaboration Inquiry](mailto:jacksonSmall@ucf.edu)**
 
 ---
@@ -337,7 +332,7 @@ Python • Scikit-learn • Streamlit • Pandas • NumPy • Plotly • OpenSt
 <div class="cta-section" style="text-align: center; margin-top: 3em; padding: 2em; border-radius: 12px;">
   <h3>Interested in This Project?</h3>
   <p>Explore the code or discuss collaboration opportunities.</p>
-  <a href="https://github.com/jacksonSmall/Small_Jackson_TelematicsInsurance" class="btn btn--primary" style="margin: 0.5em;">
+  <a href="https://github.com/jacksonSmall/AI-Driver-Risk-Scoring-Platform" class="btn btn--primary" style="margin: 0.5em;">
     <i class="fab fa-github"></i> View GitHub Repository
   </a>
   <a href="mailto:jacksonSmall@ucf.edu" class="btn btn--inverse" style="margin: 0.5em;">
