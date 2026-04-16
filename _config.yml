@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Jackson Small"
 title_separator          : "-"
 name                     : &name "Jackson Small"
-description              : &description "I am in my 4th year earning a B.S. in Data Science."
+description              : &description "Data Scientist. UCF B.S. Data Science (May 2026), M.S. Statistics & Data Science (Fall 2026). AI Associate Developer at Insurity."
 url                      : https://jacksonSmall.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jacksonSmall/jacksonSmall.github.io"
@@ -27,7 +27,7 @@ author:
   image            : "https://jacksonSmall.github.io/assets/images/profile_.jpg"
   name             : "Jackson Small"
   pronouns         : "he/him"  
-  bio              : "I am in my 4th year earning a B.S. in Data Science at UCF."
+  bio              : "Data Scientist. UCF B.S. Data Science (2026) · M.S. Statistics & Data Science (Fall 2026) · AI Associate Developer at Insurity."
   location         : "Florida"
   employer         : "Insurity | UCF"
   uri              : # URL
@@ -49,7 +49,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           :  "jacksonSmall"
-  kaggle           : # Username  
+  kaggle           : "Jackson_sm"
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
