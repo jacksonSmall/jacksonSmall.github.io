@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackson Small — Data Scientist & ML Researcher</title>
+<meta name="description" content="Jackson Small — Data Scientist & ML Researcher. UCF M.S. Statistics & Data Science, AIM Lab researcher, published honors thesis author. Python, PyTorch, LLMs, RAG.">
+<meta property="og:title" content="Jackson Small — Data Scientist & ML Researcher">
+<meta property="og:description" content="UCF M.S. Statistics & Data Science · AIM Lab Researcher · Published thesis: Lipschitz-stable CNNs for EEG seizure detection (97% acc, 0.99 AUC).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jacksonsmall.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1222'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%2334d399' text-anchor='middle'%3EJS%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jackson Small",
+  "jobTitle": "Data Scientist & ML Researcher",
+  "email": "mailto:jackson.small2022@gmail.com",
+  "url": "https://jacksonsmall.github.io/",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Central Florida"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Insurity, Inc."
+  },
+  "award": "UCF Data Science Award for Excellence in Undergraduate Achievement — Overall Winner (SDMSS, 2026)",
+  "knowsAbout": ["Machine Learning", "Statistics", "Deep Learning", "LLM Fine-tuning", "RAG Systems", "Video Generation", "EEG Signal Processing"],
+  "sameAs": [
+    "https://github.com/jacksonSmall",
+    "https://linkedin.com/in/jackson-small-ds",
+    "https://huggingface.co/jsmall12"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (!t && window.matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+<style>
+/* ============ Design tokens ============ */
+:root {
+  --bg-0: #070b14;
+  --bg-1: #0b1222;
+  --bg-2: #0e1628;
+  --surface: rgba(148, 163, 184, 0.055);
+  --surface-hover: rgba(148, 163, 184, 0.095);
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.24);
+  --text: #e7eef7;
+  --text-muted: #9fb0c3;
+  --text-dim: #64748b;
+  --accent: #34d399;
+  --accent-strong: #10b981;
+  --accent-dim: rgba(52, 211, 153, 0.12);
+  --accent-border: rgba(52, 211, 153, 0.32);
+  --accent-glow: rgba(16, 185, 129, 0.22);
+  --blue: #60a5fa;
+  --blue-dim: rgba(96, 165, 250, 0.12);
+  --gold: #fbbf24;
+  --gold-dim: rgba(251, 191, 36, 0.10);
+  --gold-border: rgba(251, 191, 36, 0.38);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --spotlight: rgba(52, 211, 153, 0.08);
+}
+
+/* ============ Light theme ============ */
+html[data-theme="light"] {
+  --bg-0: #eef2f7;
+  --bg-1: #e6ecf4;
+  --bg-2: #ffffff;
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-hover: rgba(255, 255, 255, 0.88);
+  --border: rgba(15, 23, 42, 0.12);
+  --border-strong: rgba(15, 23, 42, 0.24);
+  --text: #0f172a;
+  --text-muted: #3f4f63;
+  --text-dim: #64748b;
+  --accent: #047857;
+  --accent-strong: #059669;
+  --accent-dim: rgba(5, 150, 105, 0.10);
+  --accent-border: rgba(5, 150, 105, 0.35);
+  --accent-glow: rgba(5, 150, 105, 0.22);
+  --blue: #1d4ed8;
+  --blue-dim: rgba(29, 78, 216, 0.08);
+  --gold: #a16207;
+  --gold-dim: rgba(161, 98, 7, 0.09);
+  --gold-border: rgba(161, 98, 7, 0.38);
+  --spotlight: rgba(5, 150, 105, 0.07);
+}
+html[data-theme="light"] .bg-gradient {
+  background:
+    radial-gradient(ellipse 90% 55% at 18% -8%, rgba(16, 185, 129, 0.13), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 88% 12%, rgba(59, 130, 246, 0.11), transparent 55%),
+    linear-gradient(168deg, #eef3f9 0%, #eef2f7 45%, #e7edf4 100%);
+}
+html[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+}
+html[data-theme="light"] .noise { opacity: 0.028; }
+html[data-theme="light"] .blob-1 { background: rgba(16, 185, 129, 0.17); }
+html[data-theme="light"] .blob-2 { background: rgba(59, 130, 246, 0.14); }
+html[data-theme="light"] .nav { background: rgba(244, 247, 251, 0.78); }
+html[data-theme="light"] .btn-primary { color: #ffffff; }
+html[data-theme="light"] .palette-backdrop { background: rgba(15, 23, 42, 0.28); }
+html[data-theme="light"] .palette-box {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 32px 90px -18px rgba(15, 23, 42, 0.35), 0 0 0 1px var(--accent-dim);
+}
+html[data-theme="light"] .glass-hover:hover {
+  box-shadow: 0 16px 44px -18px rgba(15, 23, 42, 0.22), 0 0 0 1px var(--accent-dim), 0 8px 32px -16px var(--accent-glow);
+}
+html[data-theme="light"] ::selection { background: rgba(5, 150, 105, 0.18); }
+html[data-theme="light"] .xp-card::before { background: var(--bg-2); }
+body, .nav { transition: background-color 0.3s, color 0.3s; }
+
+/* ============ Base ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-0);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--accent-glow); color: var(--text); }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weight: 600; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 12px; z-index: 200;
+  background: var(--bg-2); color: var(--text); padding: 10px 18px;
+  border-radius: 8px; border: 1px solid var(--accent-border);
+}
+.skip-link:focus { left: 12px; }
+
+/* ============ Background layers ============ */
+.bg-gradient {
+  position: fixed; inset: 0; z-index: -3;
+  background:
+    radial-gradient(ellipse 90% 55% at 18% -8%, rgba(16, 185, 129, 0.10), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 88% 12%, rgba(59, 130, 246, 0.09), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 115%, rgba(16, 185, 129, 0.06), transparent 60%),
+    linear-gradient(168deg, var(--bg-1) 0%, var(--bg-0) 45%, #060a12 100%);
+}
+.bg-grid {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 0%, black 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 0%, black 30%, transparent 78%);
+}
+.blob {
+  position: fixed; border-radius: 50%; filter: blur(90px); z-index: -2;
+  pointer-events: none; opacity: 0.5; will-change: transform;
+}
+.blob-1 { width: 480px; height: 480px; top: -160px; left: -120px; background: rgba(16, 185, 129, 0.13); animation: drift1 26s var(--ease) infinite alternate; }
+.blob-2 { width: 420px; height: 420px; top: 30%; right: -180px; background: rgba(59, 130, 246, 0.10); animation: drift2 32s var(--ease) infinite alternate; }
+@keyframes drift1 { from { transform: translate(0, 0); } to { transform: translate(90px, 70px); } }
+@keyframes drift2 { from { transform: translate(0, 0); } to { transform: translate(-70px, -90px); } }
+
+.noise {
+  position: fixed; inset: -50%; width: 200%; height: 200%; z-index: 90;
+  pointer-events: none; opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 9s steps(6) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2%, 2%); }
+  40% { transform: translate(2%, -1%); }
+  60% { transform: translate(-1%, -2%); }
+  80% { transform: translate(1%, 1%); }
+}
+
+/* Scroll progress */
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+  z-index: 110; box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ============ Nav ============ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  background: rgba(7, 11, 20, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-mono); font-weight: 700; font-size: 1rem;
+  color: var(--text); letter-spacing: -0.02em;
+}
+.nav-logo:hover { text-decoration: none; }
+.nav-logo .tick { color: var(--accent); }
+.nav-links { display: flex; gap: 4px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+  padding: 8px 12px; border-radius: 8px; transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface-hover); text-decoration: none; }
+.nav-links a.active { color: var(--accent); background: var(--accent-dim); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; color: var(--text); cursor: pointer; }
+
+/* ============ Layout ============ */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 96px 0 8px; }
+.kicker {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.kicker::after { content: ""; height: 1px; width: 64px; background: linear-gradient(90deg, var(--accent-border), transparent); }
+.section-title { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin-bottom: 36px; letter-spacing: -0.02em; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ============ Glass card ============ */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.25s var(--ease), border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.glass-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  background: var(--surface-hover);
+  box-shadow: 0 16px 44px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--accent-dim), 0 8px 32px -16px var(--accent-glow);
+}
+
+/* Metric chip — the scannable numbers */
+.chip {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  color: var(--accent); background: var(--accent-dim);
+  border: 1px solid var(--accent-border); border-radius: 999px;
+  padding: 3px 11px; white-space: nowrap; line-height: 1.5;
+}
+.chip small { font-weight: 400; color: var(--text-muted); font-size: 0.92em; }
+.chip.blue { color: var(--blue); background: var(--blue-dim); border-color: rgba(96, 165, 250, 0.3); }
+.chip.gold { color: var(--gold); background: var(--gold-dim); border-color: var(--gold-border); }
+
+/* Award banner */
+.award-banner {
+  display: flex; align-items: center; gap: 18px;
+  padding: 22px 28px; margin-bottom: 22px;
+  border-color: var(--gold-border);
+}
+.award-banner:hover { border-color: var(--gold); }
+.award-banner svg { width: 28px; height: 28px; color: var(--gold); flex-shrink: 0; }
+.award-name { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.award-name .gold-text { color: var(--gold); }
+.award-sub { color: var(--text-muted); font-size: 0.88rem; margin-top: 2px; }
+
+/* Tech tag */
+.tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.72rem;
+  color: var(--text-muted); background: rgba(148, 163, 184, 0.08);
+  border: 1px solid var(--border); border-radius: 6px; padding: 2px 9px;
+}
+
+/* ============ Hero ============ */
+.hero { min-height: 100svh; display: flex; align-items: center; padding: 120px 0 60px; }
+.hero .hero-status, .hero h1, .hero .hero-tagline, .hero .hero-typed, .hero .hero-stats, .hero .hero-cta {
+  animation: heroIn 0.7s var(--ease) backwards;
+}
+.hero h1 { animation-delay: 0.08s; }
+.hero .hero-tagline { animation-delay: 0.16s; }
+.hero .hero-typed { animation-delay: 0.24s; }
+.hero .hero-stats { animation-delay: 0.34s; }
+.hero .hero-cta { animation-delay: 0.44s; }
+@keyframes heroIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-status {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 999px; padding: 6px 15px;
+  background: var(--surface); margin-bottom: 28px;
+}
+.hero-status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 4.6rem); font-weight: 700; letter-spacing: -0.035em;
+  margin-bottom: 10px;
+}
+.hero h1 .accent-dot { color: var(--accent); }
+.hero-tagline {
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--text-muted);
+  font-family: var(--font-display); font-weight: 500; margin-bottom: 14px;
+}
+.hero-typed {
+  font-family: var(--font-mono); font-size: clamp(0.85rem, 1.8vw, 1rem);
+  color: var(--accent); min-height: 1.7em; margin-bottom: 34px;
+}
+.hero-typed .prompt { color: var(--text-dim); }
+.hero-typed .cursor { display: inline-block; width: 9px; background: var(--accent); animation: blink 1.05s steps(1) infinite; color: transparent; border-radius: 1px; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero-stats { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.92rem;
+  padding: 12px 24px; border-radius: 12px; cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s, background 0.2s, border-color 0.2s;
+  border: 1px solid transparent;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+.btn-primary { background: var(--accent-strong); color: #04110b; }
+.btn-primary:hover { background: var(--accent); box-shadow: 0 8px 28px -8px var(--accent-glow); }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); backdrop-filter: blur(8px); }
+.btn-ghost:hover { border-color: var(--border-strong); background: var(--surface-hover); }
+
+/* ============ About ============ */
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; }
+.about-text { padding: 34px 36px; font-size: 1.04rem; color: var(--text-muted); }
+.about-text strong { color: var(--text); font-weight: 600; }
+.about-text p + p { margin-top: 16px; }
+.about-facts { padding: 30px 28px; display: flex; flex-direction: column; gap: 16px; }
+.fact { display: flex; gap: 13px; align-items: flex-start; }
+.fact svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; margin-top: 3px; }
+.fact-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.fact-value { font-size: 0.92rem; color: var(--text); font-weight: 500; }
+
+/* ============ Experience ============ */
+.timeline { position: relative; display: flex; flex-direction: column; gap: 24px; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 14px; bottom: 14px; width: 1px;
+  background: linear-gradient(180deg, var(--accent-border), var(--border) 70%, transparent);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 1.2s var(--ease) 0.15s;
+}
+.timeline.drawn::before { transform: scaleY(1); }
+.xp-card { position: relative; margin-left: 38px; padding: 28px 30px; }
+.xp-card::before {
+  content: ""; position: absolute; left: -38px; top: 30px;
+  width: 15px; height: 15px; border-radius: 50%;
+  background: var(--bg-1); border: 2px solid var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.xp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-bottom: 4px; }
+.xp-head h3 { font-size: 1.18rem; letter-spacing: -0.01em; }
+.xp-role { color: var(--accent); font-weight: 500; font-family: var(--font-display); font-size: 0.98rem; }
+.xp-date { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin-bottom: 14px; }
+.xp-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px; }
+.xp-card li { color: var(--text-muted); font-size: 0.94rem; padding-left: 20px; position: relative; }
+.xp-card li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-size: 0.8em; top: 2px; }
+.xp-card li strong { color: var(--text); font-weight: 600; }
+.xp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.xp-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+/* ============ Projects ============ */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 22px; }
+.project-card { padding: 26px 28px; display: flex; flex-direction: column; }
+.project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.project-top h3 { font-size: 1.08rem; letter-spacing: -0.01em; }
+.project-badge {
+  font-family: var(--font-mono); font-size: 0.64rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
+  color: var(--accent); border: 1px solid var(--accent-border);
+  border-radius: 5px; padding: 3px 8px; background: var(--accent-dim);
+}
+.project-badge.blue { color: var(--blue); border-color: rgba(96, 165, 250, 0.3); background: var(--blue-dim); }
+.project-badge.gold { color: var(--gold); border-color: var(--gold-border); background: var(--gold-dim); }
+.project-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.project-desc { color: var(--text-muted); font-size: 0.91rem; flex: 1; margin-bottom: 18px; }
+.project-links { display: flex; gap: 16px; border-top: 1px solid var(--border); padding-top: 15px; }
+.project-links a {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);
+  transition: color 0.2s;
+}
+.project-links a:hover { color: var(--accent); text-decoration: none; }
+.project-links svg { width: 14px; height: 14px; }
+
+/* ============ Skills ============ */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
+.skill-card { padding: 24px 26px; }
+.skill-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.skill-head svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+.skill-head h3 { font-size: 1rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags .tag { font-size: 0.76rem; padding: 4px 11px; transition: border-color 0.2s, color 0.2s; }
+.skill-tags .tag:hover { border-color: var(--accent-border); color: var(--text); }
+
+/* ============ Education ============ */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 22px; }
+.edu-card { padding: 28px 30px; }
+.edu-card .degree { font-size: 1.12rem; margin-bottom: 4px; }
+.edu-card .school { color: var(--accent); font-weight: 500; font-size: 0.94rem; margin-bottom: 4px; font-family: var(--font-display); }
+.edu-card .dates { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin-bottom: 14px; }
+.edu-card .detail { color: var(--text-muted); font-size: 0.91rem; margin-bottom: 14px; }
+.cert-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.cert-card { padding: 20px 26px; display: flex; align-items: center; gap: 15px; }
+.cert-card svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
+.cert-name { font-weight: 600; font-size: 0.94rem; font-family: var(--font-display); }
+.cert-issuer { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); }
+
+/* ============ Coursework tabs ============ */
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.tab-btn {
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
+  color: var(--text-muted); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 9px 18px; cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.tab-btn:hover { color: var(--text); border-color: var(--border-strong); }
+.tab-btn.active { color: var(--accent); background: var(--accent-dim); border-color: var(--accent-border); }
+.tab-btn .count { color: var(--text-dim); font-size: 0.85em; }
+.tab-btn.active .count { color: var(--accent); opacity: 0.7; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: tabIn 0.35s var(--ease); }
+@keyframes tabIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.course-wrap { padding: 8px 10px; overflow-x: auto; }
+.course-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.course-table th {
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim);
+  text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border);
+}
+.course-table td { padding: 12px 16px; font-size: 0.88rem; color: var(--text-muted); border-bottom: 1px solid rgba(148, 163, 184, 0.07); }
+.course-table tr:last-child td { border-bottom: none; }
+.course-table tbody tr { transition: background 0.15s; }
+.course-table tbody tr:hover { background: rgba(148, 163, 184, 0.05); }
+.course-code { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.course-title { color: var(--text); font-weight: 500; }
+.course-term { font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap; }
+.grade {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
+  border-radius: 6px; padding: 2px 10px; white-space: nowrap;
+  color: var(--text-muted); background: rgba(148, 163, 184, 0.1); border: 1px solid var(--border);
+}
+.grade.a { color: var(--accent); background: var(--accent-dim); border-color: var(--accent-border); }
+.grade.ip { color: var(--blue); background: var(--blue-dim); border-color: rgba(96, 165, 250, 0.3); }
+.course-note { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin-top: 18px; }
+
+/* ============ Contact ============ */
+.contact-panel { padding: 56px 40px; text-align: center; }
+.contact-panel h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom: 14px; letter-spacing: -0.02em; }
+.contact-panel > p { color: var(--text-muted); max-width: 520px; margin: 0 auto 32px; }
+.contact-email {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: clamp(0.85rem, 2.4vw, 1.05rem);
+  font-weight: 600; color: var(--text);
+  border: 1px solid var(--accent-border); background: var(--accent-dim);
+  border-radius: 12px; padding: 14px 26px; margin-bottom: 34px;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s;
+}
+.contact-email:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 10px 32px -10px var(--accent-glow); }
+.contact-email svg { width: 18px; height: 18px; color: var(--accent); }
+.contact-socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.social-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 10px; padding: 9px 17px;
+  background: var(--surface); transition: color 0.2s, border-color 0.2s, transform 0.2s var(--ease);
+}
+.social-link:hover { color: var(--text); border-color: var(--accent-border); text-decoration: none; transform: translateY(-2px); }
+.social-link svg { width: 15px; height: 15px; }
+
+/* ============ Footer ============ */
+footer { padding: 44px 0 36px; text-align: center; }
+footer .sig { font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-dim); }
+footer .sig .tick { color: var(--accent); }
+
+/* ============ Command palette ============ */
+.kbd-hint {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 11px; cursor: pointer; margin-left: 10px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.kbd-hint:hover { color: var(--text); border-color: var(--border-strong); }
+.kbd-hint kbd { font-family: inherit; font-size: 0.92em; color: var(--accent); }
+.palette { position: fixed; inset: 0; z-index: 150; display: none; }
+.palette.open { display: block; }
+.palette-backdrop { position: absolute; inset: 0; background: rgba(4, 7, 13, 0.62); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); }
+.palette-box {
+  position: relative; max-width: 580px; margin: 12vh auto 0; width: calc(100% - 32px);
+  background: rgba(13, 20, 37, 0.94); border: 1px solid var(--border-strong);
+  border-radius: 16px; overflow: hidden;
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 32px 90px -18px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--accent-dim);
+  animation: palIn 0.22s var(--ease);
+}
+@keyframes palIn { from { opacity: 0; transform: translateY(-10px) scale(0.985); } to { opacity: 1; transform: none; } }
+.palette-head { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding: 0 18px; }
+.palette-head svg { width: 16px; height: 16px; color: var(--text-dim); flex-shrink: 0; }
+.palette-input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: var(--text); font-family: var(--font-mono); font-size: 0.95rem;
+  padding: 17px 0; caret-color: var(--accent);
+}
+.palette-input::placeholder { color: var(--text-dim); }
+.palette-list { max-height: 330px; overflow-y: auto; padding: 8px; }
+.palette-item {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;
+  padding: 11px 13px; border-radius: 9px;
+}
+.palette-item svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--text-dim); }
+.palette-item.sel { background: var(--accent-dim); color: var(--text); }
+.palette-item.sel svg { color: var(--accent); }
+.palette-item .pi-kind { margin-left: auto; font-size: 0.62rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; }
+.palette-empty { padding: 22px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim); text-align: center; display: none; }
+.palette-foot {
+  display: flex; gap: 16px; border-top: 1px solid var(--border); padding: 10px 18px;
+  font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-dim);
+}
+.palette-foot kbd {
+  font-family: inherit; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1px 5px; margin-right: 4px;
+}
+
+/* ============ Theme toggle ============ */
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 33px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text-muted); cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent-border); }
+.theme-toggle svg { width: 15px; height: 15px; }
+.theme-toggle .icon-moon { display: none; }
+html[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+/* ============ Spotlight hover (cursor-tracking glow) ============ */
+@media (hover: hover) and (pointer: fine) {
+  .glass { position: relative; }
+  .glass::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    pointer-events: none; opacity: 0; transition: opacity 0.35s;
+    background: radial-gradient(440px circle at var(--mx, 50%) var(--my, 50%), var(--spotlight), transparent 65%);
+  }
+  .glass:hover::after { opacity: 1; }
+}
+
+/* ============ Project archive ============ */
+.archive-title { font-family: var(--font-mono); font-size: 0.84rem; font-weight: 500; color: var(--text-dim); margin: 36px 0 14px; }
+.archive-title .tick { color: var(--accent); }
+
+/* ============ Back to top ============ */
+.to-top {
+  position: fixed; right: 22px; bottom: 22px; z-index: 96;
+  width: 44px; height: 44px; border-radius: 12px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface-hover); border: 1px solid var(--border);
+  color: var(--text-muted); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  opacity: 0; pointer-events: none; transform: translateY(10px);
+  transition: opacity 0.25s, transform 0.25s var(--ease), border-color 0.2s, color 0.2s;
+}
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+.to-top:hover { color: var(--accent); border-color: var(--accent-border); }
+.to-top svg { width: 18px; height: 18px; }
+
+/* ============ Copy email ============ */
+.copy-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 500;
+  color: var(--text-muted); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 9px;
+  padding: 8px 14px; cursor: pointer; margin-left: 10px; vertical-align: middle;
+  transition: color 0.2s, border-color 0.2s;
+}
+.copy-btn:hover { color: var(--text); border-color: var(--border-strong); }
+.copy-btn.copied { color: var(--accent); border-color: var(--accent-border); }
+.copy-btn svg { width: 13px; height: 13px; }
+
+/* ============ Responsive ============ */
+@media (max-width: 920px) {
+  .about-grid, .edu-grid, .cert-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .nav-links {
+    display: none; position: absolute; top: 64px; right: 12px;
+    flex-direction: column; background: rgba(10, 16, 30, 0.96);
+    border: 1px solid var(--border); border-radius: 14px; padding: 10px;
+    backdrop-filter: blur(20px); min-width: 180px;
+    box-shadow: 0 20px 50px -12px rgba(0,0,0,0.8);
+  }
+  .nav-links.open { display: flex; }
+  html[data-theme="light"] .nav-links {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.25);
+  }
+  .nav-toggle { display: block; }
+  .kbd-hint { display: none; }
+  .to-top { right: 14px; bottom: 14px; }
+  .course-table { min-width: 470px; }
+  .course-table th, .course-table td { padding: 10px 10px; }
+  .course-table th:nth-child(5), .course-table td:nth-child(5) { display: none; }
+  .course-wrap {
+    -webkit-mask-image: linear-gradient(90deg, black 90%, transparent);
+    mask-image: linear-gradient(90deg, black 90%, transparent);
+  }
+  .contact-email { font-size: 0.78rem; padding: 12px 14px; max-width: 100%; }
+  section { padding: 72px 0 8px; }
+  .xp-card { margin-left: 28px; padding: 22px; }
+  .xp-card::before { left: -28px; }
+  .timeline::before { left: 6px; }
+  .about-text { padding: 26px 24px; }
+  .contact-panel { padding: 44px 22px; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+  .reveal { opacity: 1; transform: none; }
+  .noise { animation: none; }
+  .timeline::before { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#about">Skip to content</a>
+<div class="bg-gradient" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">jackson<span class="tick">.</span>small<span class="tick">()</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#education">education</a></li>
+      <li><a href="#coursework">coursework</a></li>
+      <li><a href="#community">community</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="kbd-hint" id="palette-open" aria-label="Open command palette" aria-haspopup="dialog">
+        <kbd>&#8984;K</kbd> jump to
+      </button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-status reveal visible">
+      <span class="dot" aria-hidden="true"></span>
+      Open to ML &amp; data science roles · Orlando, FL
+    </div>
+    <h1>Jackson Small<span class="accent-dot">.</span></h1>
+    <p class="hero-tagline">Data Scientist &amp; ML Researcher</p>
+    <p class="hero-typed" aria-label="UCF Data Science Award Overall Winner; UCF M.S. Statistics and Data Science; AIM Lab Researcher under Dr. Yu Tian; AI Associate Developer at Insurity; First Data Science undergrad published at UCF">
+      <span class="prompt">~$</span> <span id="typed">UCF M.S. Statistics &amp; Data Science</span><span class="cursor" aria-hidden="true">|</span>
+    </p>
+    <div class="hero-stats" aria-label="Headline metrics">
+      <span class="chip gold">1st <small>UCF Data Science Award</small></span>
+      <span class="chip"><span class="count-num" data-target="0.99" data-decimals="2">0.99</span> <small>AUC · thesis</small></span>
+      <span class="chip"><span class="count-num" data-target="700" data-prefix="$" data-suffix="K">$700K</span> <small>saved · Insurity</small></span>
+      <span class="chip"><span class="count-num" data-target="17" data-suffix="&times;">17&times;</span> <small>migration speed</small></span>
+      <span class="chip"><span class="count-num" data-target="3.83" data-decimals="2">3.83</span> <small>GPA · Honors</small></span>
+      <span class="chip gold">1st <small>DS undergrad published @ UCF</small></span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://github.com/jacksonSmall" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/jackson-small-ds" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="files/cv.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+        Resume
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <p class="kicker reveal">01 · About</p>
+    <h2 class="section-title reveal">Statistical theory, shipped to production</h2>
+    <div class="about-grid">
+      <div class="glass about-text reveal">
+        <p>I'm a data scientist working at the intersection of <strong>statistical theory and production ML</strong> — building things that actually ship. I graduated from UCF's Burnett Honors College with a B.S. in Data Science (<strong>GPA 3.83</strong>, May 2026) and start the <strong>M.S. in Statistics &amp; Data Science</strong> in Fall 2026 as a Graduate Teaching Assistant.</p>
+        <p>At <strong>UCF's AIM Lab (AI &amp; Imaging in Medicine)</strong>, under director <strong>Dr. Yu Tian</strong>, I research zero-shot autoregressive video generation for real-time anomaly and crime prediction — feeding surveillance frames into Wan 2.2 and scoring how reality diverges from the predicted future. My published honors thesis proved <strong>Lipschitz stability bounds (L = 24.72)</strong> for CNN-based EEG seizure detection — the first Data Science undergrad thesis in UCF's STARS repository.</p>
+        <p>I enter grad school on a <strong>Graduate Teaching Assistantship ($15K stipend)</strong> plus the competitive <strong>Graduate Dean's Fellowship ($5K)</strong> with full tuition remission. Outside of work: <strong>Eagle Scout</strong>, Epilepsy Foundation Ambassador, youth group leader and drummer with CRU at UCF, and Arch Linux enthusiast (Hyprland, naturally).</p>
+      </div>
+      <div class="glass about-facts reveal">
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          <div><div class="fact-label">Latest</div><div class="fact-value">UCF Data Science Award — Overall Winner (SDMSS)</div></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <div><div class="fact-label">Currently</div><div class="fact-value">AI Associate Developer @ Insurity · Incoming M.S. + GTA @ UCF</div></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <div><div class="fact-label">Research</div><div class="fact-value">Video anomaly prediction · AIM Lab · Dr. Yu Tian</div></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          <div><div class="fact-label">Published</div><div class="fact-value">First DS undergrad published at UCF · STARS repository</div></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          <div><div class="fact-label">Daily driver</div><div class="fact-value">Arch Linux + Hyprland</div></div>
+        </div>
+        <div class="fact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <div><div class="fact-label">Beyond code</div><div class="fact-value">Eagle Scout · Epilepsy Foundation Ambassador · Drummer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="container">
+    <p class="kicker reveal">02 · Experience</p>
+    <h2 class="section-title reveal">Where I've shipped</h2>
+    <div class="timeline">
+
+      <article class="glass glass-hover xp-card reveal">
+        <div class="xp-head"><h3>Insurity, Inc.</h3><span class="xp-role">AI Associate Developer</span></div>
+        <p class="xp-date">Fall 2025 – Present · Remote / Part-Time</p>
+        <div class="xp-chips">
+          <span class="chip">$700K <small>cost avoidance</small></span>
+          <span class="chip">17&times; <small>industry speed</small></span>
+          <span class="chip">100% <small>verification pass</small></span>
+          <span class="chip">85–96% <small>storage reduction</small></span>
+        </div>
+        <ul>
+          <li>Built and deployed <strong>RAG/LLM prototypes using Anthropic, OpenAI, and Replit APIs</strong> to upgrade legacy product features — prompt-engineered NLP solutions presented as POCs to senior engineers</li>
+          <li>Migrated <strong>175 SSRS reports to Power BI in 3 weeks</strong> vs. a 3–4 month projection — $700K cost avoidance at 17&times; industry speed, processing 1.1M+ lines of XML across 187 database connections with a 100% pass rate</li>
+          <li>Architected a <strong>dual-layer HIPAA audit system for 23 PHI tables</strong> (9,196 lines of C# and SQL) — dynamic SQL triggers cutting storage 85–96% per audit record, 3-tier role-based access controls, field masking, and a 5-step username resolution chain with zero audit gaps</li>
+          <li>Built an <strong>enterprise document management SDK integration</strong> (10,723 LOC, 334 automated test checks) connecting core claims software to Insurity's REST API via provider-pattern architecture and OAuth2 lifecycle management</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">Python</span><span class="tag">C#</span><span class="tag">SQL</span><span class="tag">Anthropic / OpenAI APIs</span><span class="tag">Power BI</span><span class="tag">RAG</span><span class="tag">OAuth2</span><span class="tag">HIPAA</span></div>
+      </article>
+
+      <article class="glass glass-hover xp-card reveal">
+        <div class="xp-head"><h3>UCF AIM Lab <span style="font-weight:400; color:var(--text-muted); font-size:0.75em;">· AI &amp; Imaging in Medicine</span></h3><span class="xp-role">Undergraduate Researcher</span></div>
+        <p class="xp-date">Spring 2026 – Present · Orlando, FL · Supervisor: Dr. Yu Tian (AIM Lab Director)</p>
+        <div class="xp-chips">
+          <span class="chip blue">Wan 2.2 <small>Alibaba · 14B params</small></span>
+          <span class="chip blue">H100 <small>ARCC cluster</small></span>
+          <span class="chip blue">UCF-Crime <small>benchmark</small></span>
+        </div>
+        <ul>
+          <li>Researching <strong>zero-shot autoregressive video generation</strong> for real-time anomaly and crime <em>prediction</em> in surveillance video — anticipating events before they occur, not just detecting them</li>
+          <li>Feeding surveillance frames into <strong>Wan 2.2 (Alibaba, 14B parameters)</strong> to generate predicted futures; the divergence between prediction and reality produces a <strong>rolling anomaly probability score</strong></li>
+          <li>Built a <strong>flow-matching ODE inversion</strong> pipeline with an MLP head trained on intermediate DiT latents — benchmarked on UCF-Crime, training on UCF's ARCC Newton/Stokes cluster (H100s) via SLURM</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">PyTorch</span><span class="tag">Diffusion / Flow Models</span><span class="tag">DiT</span><span class="tag">SLURM</span><span class="tag">HPC</span></div>
+      </article>
+
+      <article class="glass glass-hover xp-card reveal">
+        <div class="xp-head"><h3>Design Interactive, Inc.</h3><span class="xp-role">Research Assistant (Data Science) Intern</span></div>
+        <p class="xp-date">May 2024 – Aug 2024 · Orlando, FL · Part-Time</p>
+        <div class="xp-chips">
+          <span class="chip">~300 <small>participants · pilot studies</small></span>
+        </div>
+        <ul>
+          <li>Built <strong>automated data validation pipelines</strong> (Python + SQL) for large human-systems research datasets</li>
+          <li>Led QA on <strong>VR/AR Unity simulations</strong> — hardware deployment and eye-tracking validation for participant gaze capture</li>
+          <li>Ran statistical analysis on behavioral data across experimental conditions; led pilot studies (~300 participants)</li>
+        </ul>
+        <div class="xp-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Statistical Analysis</span><span class="tag">VR/AR</span><span class="tag">Eye Tracking</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="container">
+    <p class="kicker reveal">03 · Projects</p>
+    <h2 class="section-title reveal">Selected work</h2>
+    <div class="projects-grid">
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>EEG Seizure Detection</h3><span class="project-badge gold">1st @ UCF · Published</span></div>
+        <div class="project-chips">
+          <span class="chip">97% <small>accuracy</small></span>
+          <span class="chip">0.99 <small>AUC</small></span>
+          <span class="chip">L=24.72 <small>Lipschitz bound</small></span>
+        </div>
+        <p class="project-desc">Honors thesis (advised by Dr. Chudamani Poudyal): a Lipschitz-stable 1D CNN with Butterworth filtering for EEG seizure detection. Unraveled the CNN black box to interpret the neurophysiological features learned in the Conv layers, and proved CNN theory (convolutions, GD/SGD). First Data Science undergrad published in UCF's STARS repository; poster presentations at Burnett Honors Family Weekend (2025) and the UCF Student Scholar Symposium (2026).</p>
+        <div class="project-links">
+          <a href="https://stars.library.ucf.edu/hut2024/462" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Published Thesis</a>
+          <a href="https://github.com/jacksonSmall/EEG-Seizure-CNN-Thesis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>DataSci-Coder</h3><span class="project-badge blue">HuggingFace</span></div>
+        <div class="project-chips">
+          <span class="chip">93.3% <small>instruction compliance</small></span>
+          <span class="chip">10,795 <small>curated examples</small></span>
+          <span class="chip">&lt;2 hrs <small>on one L40S</small></span>
+        </div>
+        <p class="project-desc">QLoRA fine-tune of Qwen2.5-Coder-14B on a hand-curated data science reasoning dataset, trained on a single L40S GPU in under 2 hours. Beats the base model on instruction compliance (93.3% vs 91.4%), code-only output (10/10 vs 6/10), and code ratio (100% vs 87.9%). Published on HuggingFace.</p>
+        <div class="project-links">
+          <a href="https://huggingface.co/jsmall12/DataSci-Coder-14B-LoRA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>HuggingFace</a>
+          <a href="https://github.com/jacksonSmall/DataSci-Coder" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>Virtual Patient</h3><span class="project-badge blue">UCF &times; ITESM Capstone</span></div>
+        <div class="project-chips">
+          <span class="chip">40 <small>OSCE transcripts</small></span>
+          <span class="chip">&lt;1s <small>rubric reports</small></span>
+          <span class="chip">3 <small>LLMs benchmarked</small></span>
+        </div>
+        <p class="project-desc">Led 3 experiments on AI-driven medical communication training for an international capstone: A/B-tested text-only vs. video-structured prompts, benchmarked Llama 3.1 8B, BioMistral 7B, and Qwen 2.5 7B (BioMistral selected), and built a working prototype where students converse with a simulated patient while a 6-dimension rubric scorer grades the interaction in real time.</p>
+        <div class="project-links">
+          <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-dim);">Python · BioMistral · FastAPI · LLM Evaluation</span>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>AI Driver Risk Platform</h3><span class="project-badge">End-to-end ML</span></div>
+        <div class="project-chips">
+          <span class="chip">0.98 <small>ROC-AUC</small></span>
+          <span class="chip">95.2% <small>accuracy</small></span>
+          <span class="chip">47 <small>engineered features</small></span>
+        </div>
+        <p class="project-desc">Telematics pipeline scoring driver risk from behavioral data — 47 engineered features, scikit-learn ensembles, and a real-time Streamlit dashboard with SHAP feature importance, interactive Plotly maps, and gamification rewards.</p>
+        <div class="project-links">
+          <a href="https://github.com/jacksonSmall/AI-Driver-Risk-Scoring-Platform" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>E-Commerce Behavior Analysis</h3><span class="project-badge">ML Pipeline</span></div>
+        <div class="project-chips">
+          <span class="chip">0.93 <small>AUC</small></span>
+          <span class="chip">91% <small>F1-score</small></span>
+          <span class="chip">12,330 <small>sessions</small></span>
+        </div>
+        <p class="project-desc">Purchase-intent prediction from real e-commerce session data — rigorous statistical testing, clustering, SMOTE class balancing, and Random Forest ensembles.</p>
+        <div class="project-links">
+          <a href="https://github.com/jacksonSmall/shopper-behavior-analysis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>Neuro-Wave</h3><span class="project-badge blue">Research</span></div>
+        <div class="project-chips">
+          <span class="chip blue">Bayesian <small>uncertainty</small></span>
+          <span class="chip blue">PINN <small>+ GNN</small></span>
+        </div>
+        <p class="project-desc">Bayesian Physics-Informed Graph Neural Network for seizure propagation modeling with uncertainty quantification across EEG electrode networks — extending the thesis from a single-channel CNN to graph-structured propagation dynamics with PyTorch Geometric.</p>
+        <div class="project-links">
+          <a href="https://github.com/jacksonSmall/neurowave" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>Jarvis</h3><span class="project-badge">100% Local</span></div>
+        <div class="project-chips">
+          <span class="chip">0 <small>cloud calls</small></span>
+          <span class="chip">4 <small>model pipeline</small></span>
+        </div>
+        <p class="project-desc">Private, fully local voice AI assistant — wake word, Parakeet STT, Qwen reasoning, and Kokoro TTS orchestrated across a Mac, a Raspberry Pi 5, and an RTX GPU box over Tailscale, with hybrid RAG memory. No data ever leaves the network.</p>
+        <div class="project-links">
+          <a href="https://github.com/jacksonSmall/jarvis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+        </div>
+      </article>
+
+      <article class="glass glass-hover project-card reveal">
+        <div class="project-top"><h3>Self-Hosted Knowledge RAG</h3><span class="project-badge">Live in Production</span></div>
+        <div class="project-chips">
+          <span class="chip">90% <small>retrieval accuracy</small></span>
+          <span class="chip">24/7 <small>on a Raspberry Pi 5</small></span>
+        </div>
+        <p class="project-desc">Personal RAG system syncing a markdown knowledge vault into Open WebUI on a Raspberry Pi 5 — hybrid BM25 + dense retrieval with cross-encoder reranking, SHA-tracked incremental ingestion, and systematic A/B evaluation of embedders, rerankers, and chunking strategies.</p>
+        <div class="project-links">
+          <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-dim);">Python · ChromaDB · Ollama · Open WebUI · MCP</span>
+        </div>
+      </article>
+
+    </div>
+
+    <h3 class="archive-title reveal"><span class="tick">//</span> more things I've built</h3>
+    <div class="glass course-wrap reveal">
+      <table class="course-table">
+        <thead><tr><th>Project</th><th>What it is</th><th>Stack</th></tr></thead>
+        <tbody>
+          <tr><td class="course-code">causal-self</td><td class="course-title">Personal causal-inference platform — 6 automated data collectors over 2.5 years of personal data, DoWhy / Granger / Bayesian ITS analyses, Streamlit dashboard</td><td class="course-term">Python · DoWhy · PyMC</td></tr>
+          <tr><td class="course-code">mcsr-wrapped</td><td class="course-title">Spotify-Wrapped-style season recap for Minecraft speedrunners — K-means player archetypes, percentile stats, shareable image cards</td><td class="course-term">FastAPI · scikit-learn · HTMX</td></tr>
+          <tr><td class="course-code">jackpi-monitor</td><td class="course-title">Raspberry Pi homelab dashboard — live system stats, service health controls, multi-device sync status</td><td class="course-term">FastAPI · systemd</td></tr>
+          <tr><td class="course-code">kaggle</td><td class="course-title">9 competitions spanning acoustic species ID (BirdCLEF), LLM reasoning with LoRA, math olympiad problems, and RNA bio-sequence prediction</td><td class="course-term">PyTorch · XGBoost · LoRA</td></tr>
+          <tr><td class="course-code">habit-tracker</td><td class="course-title">Personal habit tracking app with full test coverage</td><td class="course-term">React · TypeScript · Vite</td></tr>
+          <tr><td class="course-code">this-site</td><td class="course-title">Hand-rolled single-file portfolio — command palette, theme system, zero frameworks</td><td class="course-term">HTML · CSS · JS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="container">
+    <p class="kicker reveal">04 · Skills</p>
+    <h2 class="section-title reveal">Toolbox</h2>
+    <div class="skills-grid">
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <h3>Languages</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Julia</span><span class="tag">C#</span><span class="tag">JavaScript / TS</span><span class="tag">C</span><span class="tag">Bash</span></div>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="4" r="1.5"/><circle cx="12" cy="20" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="20" cy="12" r="1.5"/></svg>
+          <h3>ML / Deep Learning</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">HuggingFace</span><span class="tag">QLoRA / PEFT</span><span class="tag">PyTorch Geometric</span><span class="tag">XGBoost</span><span class="tag">SMOTE</span></div>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h3>LLM / NLP</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">RAG Systems</span><span class="tag">Anthropic / OpenAI / Azure APIs</span><span class="tag">LLM Fine-tuning</span><span class="tag">Llama / Qwen / BioMistral</span><span class="tag">LLM Evaluation</span><span class="tag">Prompt Engineering</span></div>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <h3>Data Engineering &amp; Viz</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">Pandas</span><span class="tag">NumPy / SciPy</span><span class="tag">Statsmodels</span><span class="tag">ETL</span><span class="tag">Power BI</span><span class="tag">Plotly / Seaborn</span><span class="tag">Streamlit</span><span class="tag">FastAPI</span><span class="tag">SHAP</span></div>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          <h3>Infrastructure</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">Linux / Arch</span><span class="tag">Docker</span><span class="tag">SLURM / HPC</span><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Tailscale</span><span class="tag">Git</span></div>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <h3>Statistics</h3>
+        </div>
+        <div class="skill-tags"><span class="tag">Survival Analysis</span><span class="tag">Time Series</span><span class="tag">Stochastic Processes</span><span class="tag">A/B Testing</span><span class="tag">Bayesian Methods</span><span class="tag">Multivariate Analysis</span><span class="tag">Lipschitz Bounds</span><span class="tag">Signal Processing</span><span class="tag">Cross-Validation</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="container">
+    <p class="kicker reveal">05 · Education</p>
+    <h2 class="section-title reveal">Academic record</h2>
+    <div class="glass glass-hover award-banner reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+      <div>
+        <div class="award-name"><span class="gold-text">Overall Winner</span> — UCF Data Science Award</div>
+        <div class="award-sub">Excellence in Undergraduate Achievement · School of Data, Mathematical &amp; Statistical Sciences (SDMSS) · 2026</div>
+      </div>
+    </div>
+    <div class="edu-grid">
+      <div class="glass glass-hover edu-card reveal">
+        <h3 class="degree">M.S. Statistics &amp; Data Science</h3>
+        <p class="school">University of Central Florida</p>
+        <p class="dates">Fall 2026 – Expected May 2028 · Incoming</p>
+        <p class="detail">Admitted with a Graduate Teaching Assistantship (20 hrs/week) and the competitive Graduate Dean's Fellowship, awarded by Dr. Edgard Maboudou — including full tuition remission and health insurance coverage. Continuing AIM Lab research on generative video models for anomaly prediction.</p>
+        <div class="xp-chips"><span class="chip">$15K <small>GTA stipend</small></span><span class="chip">$5K <small>Dean's Fellowship</small></span><span class="chip">100% <small>tuition remission</small></span></div>
+      </div>
+      <div class="glass glass-hover edu-card reveal">
+        <h3 class="degree">B.S. Data Science <span style="font-weight:400; color:var(--text-muted); font-size:0.8em;">· Minor in Statistics</span></h3>
+        <p class="school">University of Central Florida · Burnett Honors College</p>
+        <p class="dates">Aug 2022 – May 2026</p>
+        <p class="detail">President's Honor Roll &amp; Dean's List. Coursework: Statistical Learning, Applied Time Series, Statistical Theory I &amp; II, Mathematical Modeling, Big Data Analytics, Data Management, Data Science I &amp; II, Stat. Foundations of DS &amp; AI I &amp; II.</p>
+        <div class="xp-chips"><span class="chip">3.83 <small>GPA</small></span><span class="chip gold">1st <small>DS undergrad published @ UCF</small></span></div>
+      </div>
+    </div>
+    <div class="cert-row">
+      <div class="glass glass-hover cert-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <div>
+          <div class="cert-name">Microsoft Azure AI Essentials</div>
+          <div class="cert-issuer">Microsoft &amp; LinkedIn Learning · Dec 2025</div>
+        </div>
+      </div>
+      <div class="glass glass-hover cert-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <div>
+          <div class="cert-name">Anaconda Python for Data Science</div>
+          <div class="cert-issuer">Anaconda, Inc. &amp; LinkedIn Learning · Dec 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COURSEWORK ============ -->
+<section id="coursework">
+  <div class="container">
+    <p class="kicker reveal">06 · Coursework</p>
+    <h2 class="section-title reveal">The full transcript</h2>
+    <div class="hero-stats reveal" style="margin-bottom:28px;">
+      <span class="chip">28 <small>courses</small></span>
+      <span class="chip">21 <small>A / A&minus; grades</small></span>
+      <span class="chip">3.83 <small>GPA</small></span>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Course categories">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-stats" id="tabbtn-stats">Statistics <span class="count">· 13</span></button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-ds" id="tabbtn-ds">Data Science Core <span class="count">· 4</span></button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cs" id="tabbtn-cs">CS &amp; Data Management <span class="count">· 6</span></button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-math" id="tabbtn-math">Mathematics <span class="count">· 5</span></button>
+    </div>
+
+    <div class="tab-panel active glass course-wrap reveal" id="tab-stats" role="tabpanel" aria-labelledby="tabbtn-stats">
+      <table class="course-table">
+        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
+        <tbody>
+          <tr><td class="course-code">STA 2023</td><td class="course-title">Statistical Methods I</td><td class="course-term">Fall 2022</td><td><span class="grade">S</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4163</td><td class="course-title">Statistical Methods II</td><td class="course-term">Spring 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4164</td><td class="course-title">Statistical Methods III</td><td class="course-term">Fall 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4241</td><td class="course-title">Statistical Learning</td><td class="course-term">Summer 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4173</td><td class="course-title">Biostatistical Methods</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4321</td><td class="course-title">Statistical Theory I</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4322</td><td class="course-title">Statistical Theory II</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4903H</td><td class="course-title">Honors Directed Reading I</td><td class="course-term">Summer 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4364</td><td class="course-title">Statistics Data Science AI I</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4724</td><td class="course-title">Big Data Analytics Methods</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>4.00</td></tr>
+          <tr><td class="course-code">STA 4970H</td><td class="course-title">Honors Undergraduate Thesis</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4365</td><td class="course-title">Statistics Data Science AI II</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">STA 4852</td><td class="course-title">Applied Time Series</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>3.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-panel glass course-wrap" id="tab-ds" role="tabpanel" aria-labelledby="tabbtn-ds">
+      <table class="course-table">
+        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
+        <tbody>
+          <tr><td class="course-code">ISC 4241</td><td class="course-title">Data Science I</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">ISC 4242</td><td class="course-title">Data Science II</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">ISC 4551</td><td class="course-title">Data Graphics &amp; Visualization</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">ISC 4323C</td><td class="course-title">Capstone for Data Science</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>4.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-panel glass course-wrap" id="tab-cs" role="tabpanel" aria-labelledby="tabbtn-cs">
+      <table class="course-table">
+        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
+        <tbody>
+          <tr><td class="course-code">COP 3223C</td><td class="course-title">Intro to Programming with C</td><td class="course-term">Spring 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">COP 4283</td><td class="course-title">Data Science Programming</td><td class="course-term">Fall 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">COP 3502C</td><td class="course-title">Computer Science I</td><td class="course-term">Spring 2024</td><td><span class="grade">B&minus;</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">CIS 3360</td><td class="course-title">Security in Computing</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">CIS 4340</td><td class="course-title">Data Management Technology</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+          <tr><td class="course-code">COT 3100C</td><td class="course-title">Intro to Discrete Structures</td><td class="course-term">Summer 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-panel glass course-wrap" id="tab-math" role="tabpanel" aria-labelledby="tabbtn-math">
+      <table class="course-table">
+        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
+        <tbody>
+          <tr><td class="course-code">MAC 2311C</td><td class="course-title">Calculus with Analytic Geometry I</td><td class="course-term">Summer 2023</td><td><span class="grade a">A</span></td><td>4.00</td></tr>
+          <tr><td class="course-code">MAC 2312</td><td class="course-title">Calculus with Analytic Geometry II</td><td class="course-term">Fall 2023</td><td><span class="grade">C+</span></td><td>4.00</td></tr>
+          <tr><td class="course-code">MAC 2313</td><td class="course-title">Calculus with Analytic Geometry III</td><td class="course-term">Spring 2024</td><td><span class="grade">C</span></td><td>4.00</td></tr>
+          <tr><td class="course-code">MAS 3105</td><td class="course-title">Matrix and Linear Algebra</td><td class="course-term">Fall 2024</td><td><span class="grade a">A&minus;</span></td><td>4.00</td></tr>
+          <tr><td class="course-code">MAP 4191</td><td class="course-title">Mathematical Modeling of Data</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="course-note reveal">Spring 2026 courses were in progress at time of posting · "S" = satisfactory completion via transfer credit</p>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section id="community">
+  <div class="container">
+    <p class="kicker reveal">07 · Community &amp; Leadership</p>
+    <h2 class="section-title reveal">Beyond the terminal</h2>
+    <div class="skills-grid">
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <h3>CRU at UCF — Youth Group Leader &amp; Worship Musician</h3>
+        </div>
+        <p class="project-desc" style="margin-bottom:0;">Fall 2022 – Spring 2026 · Led weekly gatherings for ~60 students at Lake Claire and supported the worship team on cajon and drums.</p>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <h3>Pegasus Math Club</h3>
+        </div>
+        <p class="project-desc" style="margin-bottom:0;">Presented the Hilbert Hotel Paradox and M&ouml;bius strip to elementary students at UCF STEM Day (2023); attended the AMS Spring Southeastern Sectional Meeting at Florida State University (March 2024).</p>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z"/></svg>
+          <h3>BSA Eagle Scout</h3>
+        </div>
+        <p class="project-desc" style="margin-bottom:0;">2020 – Present · Scouting's highest rank — leadership, service, and a finished Eagle project before the age of 18.</p>
+      </div>
+
+      <div class="glass glass-hover skill-card reveal">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <h3>Epilepsy Foundation Ambassador</h3>
+        </div>
+        <p class="project-desc" style="margin-bottom:0;">2019 – Present · Advocating for patients worldwide and teaching seizure first-aid — the personal connection that directly motivated my published thesis on seizure detection.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="glass contact-panel reveal">
+      <p class="kicker" style="justify-content:center;">08 · Contact</p>
+      <h2>Let's build something rigorous.</h2>
+      <p>Open to ML engineering, data science, and research roles. If the metrics above caught your eye, my inbox is open.</p>
+      <a class="contact-email" href="mailto:jackson.small2022@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        jackson.small2022@gmail.com
+      </a>
+      <button class="copy-btn" id="copy-email" data-copy="jackson.small2022@gmail.com" aria-label="Copy email address to clipboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span>copy</span>
+      </button>
+      <div class="contact-socials">
+        <a class="social-link" href="https://github.com/jacksonSmall" target="_blank" rel="noopener" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          github/jacksonSmall
+        </a>
+        <a class="social-link" href="https://linkedin.com/in/jackson-small-ds" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          in/jackson-small-ds
+        </a>
+        <a class="social-link" href="https://huggingface.co/jsmall12" target="_blank" rel="noopener" aria-label="HuggingFace profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          hf/jsmall12
+        </a>
+        <a class="social-link" href="https://jacksonsmall.github.io" target="_blank" rel="noopener" aria-label="Portfolio site">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          jacksonsmall.github.io
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="sig">jackson.small<span class="tick">()</span> · built with vanilla HTML/CSS/JS · no frameworks were harmed · <span id="year">2026</span></p>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- ============ COMMAND PALETTE ============ -->
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="palette-backdrop" data-palette-close></div>
+  <div class="palette-box">
+    <div class="palette-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="palette-input" id="palette-input" type="text" placeholder="Jump to a section or link…" autocomplete="off" spellcheck="false" aria-label="Search sections and links">
+    </div>
+    <div class="palette-list" id="palette-list">
+      <button class="palette-item" data-goto="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg>About<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Experience<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Skills<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Education<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#coursework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Coursework<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Community<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-goto="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Contact<span class="pi-kind">jump</span></button>
+      <button class="palette-item" data-href="https://github.com/jacksonSmall"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub — jacksonSmall<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-href="https://linkedin.com/in/jackson-small-ds"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn — jackson-small-ds<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-href="https://huggingface.co/jsmall12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>HuggingFace — jsmall12<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-href="https://stars.library.ucf.edu/hut2024/462"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Published Thesis — UCF STARS<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-href="files/cv.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Resume — PDF<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-href="mailto:jackson.small2022@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email — jackson.small2022@gmail.com<span class="pi-kind">open</span></button>
+      <div class="palette-empty" id="palette-empty">no matches — try "projects" or "github"</div>
+    </div>
+    <div class="palette-foot">
+      <span><kbd>&uarr;&darr;</kbd> navigate</span>
+      <span><kbd>&crarr;</kbd> select</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Typed subtitle ---- */
+  var phrases = [
+    "UCF Data Science Award — Overall Winner",
+    "UCF M.S. Statistics & Data Science",
+    "AIM Lab Researcher — Dr. Yu Tian",
+    "AI Associate Developer @ Insurity",
+    "1st DS Undergrad Published @ UCF"
+  ];
+  var typedEl = document.getElementById("typed");
+  if (typedEl && !reducedMotion) {
+    var pIdx = 0, cIdx = phrases[0].length, deleting = false;
+    var TYPE = 55, DELETE = 28, HOLD = 2100, GAP = 420;
+    (function tick() {
+      var current = phrases[pIdx];
+      if (!deleting) {
+        cIdx++;
+        typedEl.textContent = current.slice(0, cIdx);
+        if (cIdx >= current.length) { deleting = true; setTimeout(tick, HOLD); return; }
+        setTimeout(tick, TYPE);
+      } else {
+        cIdx--;
+        typedEl.textContent = current.slice(0, cIdx);
+        if (cIdx <= 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; setTimeout(tick, GAP); return; }
+        setTimeout(tick, DELETE);
+      }
+    })();
+  }
+
+  /* ---- Scroll reveal ---- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reducedMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      var batch = 0;
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var delay = Math.min(batch, 5) * 70;
+        el.style.transitionDelay = delay + "ms";
+        el.classList.add("visible");
+        io.unobserve(el);
+        batch++;
+        setTimeout(function () { el.style.transitionDelay = ""; }, delay + 750);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  /* ---- Timeline draw-in ---- */
+  var timeline = document.querySelector(".timeline");
+  if (timeline) {
+    if ("IntersectionObserver" in window && !reducedMotion) {
+      var tlIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { timeline.classList.add("drawn"); tlIO.disconnect(); }
+        });
+      }, { threshold: 0.08 });
+      tlIO.observe(timeline);
+    } else {
+      timeline.classList.add("drawn");
+    }
+  }
+
+  /* ---- Active nav link ---- */
+  var sections = document.querySelectorAll("section[id]");
+  var navLinks = document.querySelectorAll(".nav-links a");
+  if ("IntersectionObserver" in window) {
+    var navIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          navLinks.forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-35% 0px -55% 0px" });
+    sections.forEach(function (s) { navIO.observe(s); });
+  }
+
+  /* ---- Mobile nav ---- */
+  var toggle = document.querySelector(".nav-toggle");
+  var links = document.querySelector(".nav-links");
+  if (toggle && links) {
+    toggle.addEventListener("click", function () {
+      var open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    links.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") { links.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
+    });
+  }
+
+  /* ---- Scroll progress ---- */
+  var bar = document.querySelector(".progress");
+  var ticking = false;
+  var toTop = document.getElementById("to-top");
+  function updateBar() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    if (toTop) toTop.classList.toggle("show", window.scrollY > 600);
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { window.requestAnimationFrame(updateBar); ticking = true; }
+  }, { passive: true });
+  updateBar();
+
+  /* ---- Count-up hero metrics ---- */
+  var counters = document.querySelectorAll(".count-num");
+  if (!reducedMotion) {
+    counters.forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-target"));
+      var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+      var prefix = el.getAttribute("data-prefix") || "";
+      var suffix = el.getAttribute("data-suffix") || "";
+      var dur = 1300, start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+        if (p < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    });
+  }
+
+  /* ---- Back to top ---- */
+  if (toTop) {
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---- Copy email ---- */
+  var copyBtn = document.getElementById("copy-email");
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(copyBtn.getAttribute("data-copy")).then(function () {
+        copyBtn.classList.add("copied");
+        copyBtn.querySelector("span").textContent = "copied ✓";
+        setTimeout(function () {
+          copyBtn.classList.remove("copied");
+          copyBtn.querySelector("span").textContent = "copy";
+        }, 1800);
+      });
+    });
+  }
+
+  /* ---- Theme toggle ---- */
+  var themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  }
+
+  /* ---- Spotlight hover ---- */
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !reducedMotion) {
+    var spotTick = false;
+    document.addEventListener("mousemove", function (e) {
+      if (spotTick) return;
+      spotTick = true;
+      var x = e.clientX, y = e.clientY, target = e.target;
+      window.requestAnimationFrame(function () {
+        var card = target.closest ? target.closest(".glass") : null;
+        if (card) {
+          var r = card.getBoundingClientRect();
+          card.style.setProperty("--mx", (x - r.left) + "px");
+          card.style.setProperty("--my", (y - r.top) + "px");
+        }
+        spotTick = false;
+      });
+    }, { passive: true });
+  }
+
+  /* ---- Command palette ---- */
+  var palette = document.getElementById("palette");
+  var palInput = document.getElementById("palette-input");
+  var palItems = Array.prototype.slice.call(document.querySelectorAll(".palette-item"));
+  var palEmpty = document.getElementById("palette-empty");
+  var palOpenBtn = document.getElementById("palette-open");
+  var selIdx = 0;
+
+  function visibleItems() {
+    return palItems.filter(function (i) { return i.style.display !== "none"; });
+  }
+  function setSel(idx) {
+    var vis = visibleItems();
+    if (!vis.length) return;
+    selIdx = (idx + vis.length) % vis.length;
+    palItems.forEach(function (i) { i.classList.remove("sel"); });
+    vis[selIdx].classList.add("sel");
+    vis[selIdx].scrollIntoView({ block: "nearest" });
+  }
+  function openPalette() {
+    palette.classList.add("open");
+    palInput.value = "";
+    filterPalette("");
+    palInput.focus();
+  }
+  function closePalette() {
+    palette.classList.remove("open");
+  }
+  function filterPalette(q) {
+    q = q.trim().toLowerCase();
+    var any = false;
+    palItems.forEach(function (i) {
+      var hit = i.textContent.toLowerCase().indexOf(q) !== -1;
+      i.style.display = hit ? "" : "none";
+      if (hit) any = true;
+    });
+    palEmpty.style.display = any ? "none" : "block";
+    setSel(0);
+  }
+  function activate(item) {
+    var goto = item.getAttribute("data-goto");
+    var href = item.getAttribute("data-href");
+    closePalette();
+    if (goto) {
+      var t = document.querySelector(goto);
+      if (t) t.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+    } else if (href) {
+      if (href.indexOf("mailto:") === 0) { window.location.href = href; }
+      else { window.open(href, "_blank", "noopener"); }
+    }
+  }
+
+  if (palette && palInput) {
+    if (palOpenBtn) palOpenBtn.addEventListener("click", openPalette);
+    palette.querySelector("[data-palette-close]").addEventListener("click", closePalette);
+    palInput.addEventListener("input", function () { filterPalette(palInput.value); });
+    palItems.forEach(function (i) {
+      i.addEventListener("click", function () { activate(i); });
+      i.addEventListener("mousemove", function () {
+        var vis = visibleItems();
+        setSel(vis.indexOf(i));
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      var isOpen = palette.classList.contains("open");
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        isOpen ? closePalette() : openPalette();
+        return;
+      }
+      if (!isOpen && e.key === "/" && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) {
+        e.preventDefault();
+        openPalette();
+        return;
+      }
+      if (!isOpen) return;
+      if (e.key === "Escape") { closePalette(); }
+      else if (e.key === "ArrowDown") { e.preventDefault(); setSel(selIdx + 1); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); setSel(selIdx - 1); }
+      else if (e.key === "Enter") {
+        e.preventDefault();
+        var vis = visibleItems();
+        if (vis[selIdx]) activate(vis[selIdx]);
+      }
+    });
+  }
+
+  /* ---- Coursework tabs ---- */
+  var tabBtns = document.querySelectorAll(".tab-btn");
+  var tabPanels = document.querySelectorAll(".tab-panel");
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      tabBtns.forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+        b.setAttribute("aria-selected", String(b === btn));
+      });
+      tabPanels.forEach(function (p) {
+        p.classList.toggle("active", p.id === btn.getAttribute("aria-controls"));
+      });
+    });
+  });
+
+  /* ---- Footer year ---- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+})();
+</script>
+
+</body>
+</html>
