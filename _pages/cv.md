@@ -26,8 +26,10 @@ redirect_from:
 
 ## Undergraduate Research
 
-**AI Undergraduate Researcher, UCF** (Spring 2026 – Present)
-- Active research project — details coming soon
+**Undergraduate Researcher, UCF AIM Lab (AI & Imaging in Medicine)** (March 2026 – Present)
+- Developing a novel anomaly *prediction* system using autoregressive video generation (Wan 2.2, 14B parameters), the first approach applying video generation models to prediction rather than detection, confirmed by full literature review
+- Architecture feeds N surveillance frames into a Wan 2.2 image-to-video model to predict future frames; divergence between prediction and observed reality produces a rolling anomaly probability score that triggers an alert above a 65% confidence threshold
+- Evaluating against the UCF-Crime dataset (1,900 videos, 128 hours, 13 anomaly categories, baseline AUC 75.41) on the UCF Newton HPC cluster (90 H100 80GB GPUs, SLURM), introducing Time-to-Event lead time and Anticipation AUC as novel evaluation metrics
 
 **Honors Undergraduate Thesis** (Summer – Fall 2025)
 - *"Theoretical Analysis of CNNs for Automatic Seizure Detection in EEG Signals"*
@@ -41,11 +43,12 @@ redirect_from:
 
 ## Industry Experience
 
-**AI Associate Developer, Insurity Inc.** (Fall 2025 – Present, Remote/Part-Time)
-- Built and deployed RAG/LLM prototypes using Anthropic, OpenAI, and Replit APIs for core insurance product features; presented POCs to senior engineers
-- Migrated 175 SSRS reports to Power BI in 3 weeks vs. 3–4 month industry projection — $700,000 cost avoidance, 17x industry speed, processing 1.1M+ lines XML across 187 DB connections with 100% pass rate
-- Architected dual-layer HIPAA audit system covering 23 PHI tables (9,196 lines C# + SQL) with dynamic SQL triggers achieving 85–96% storage reduction and zero audit gaps; implemented 3-tier RBAC + field masking
-- Delivered enterprise SDK integration (10,723 LOC, 334 automated test checks) using provider-pattern architecture + OAuth2 lifecycle management in 22 days vs. 3–6 month industry standard
+**AI Associate Developer, Insurity Inc.** (October 2025 – August 2026, Remote)
+- Directed AI coding agents (Claude, Replit) as sole engineer across six production workstreams on a .NET/SQL enterprise claims platform, delivering 37,600+ net lines of C#, SQL, and Python across 11 months with full architectural ownership and review of all generated output
+- Migrated 175 enterprise reports to Power BI across 6 business lines in 3 weeks vs. 3–4 month projection, parsing 264,000+ lines of XML to apply 1,225 modifications across 187 database connections with a 100% verification pass rate, zero production incidents, and $700,000 cost avoidance
+- Architected dual-layer HIPAA audit system covering 23 PHI tables (9,594 lines C# + SQL) with dynamic SQL triggers cutting per-record storage 85–96% (1,745 to 186 bytes) and eliminating 280+ lines of static code per table; 5-step username resolution chain, 3-tier RBAC, field masking
+- Built a Roslyn static analysis tool that parsed a legacy C# codebase into a type-resolved inventory of every data-layer call site, then drove a Python codemod that automated the refactor across all matched sites
+- Delivered an enterprise document-storage integration in 22 days vs. 3–6 month industry standard using provider-pattern architecture with three interchangeable backends, OAuth2 client-credentials lifecycle management, and DualWrite zero-downtime migration, validated by 234 automated tests across 16 REST API route families
 
 **Research Assistant (Data Science) Intern, Design Interactive Inc.** (May – Aug 2024, Part-Time)
 - Built automated data validation pipelines in Python + SQL for large human-systems research datasets

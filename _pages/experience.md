@@ -12,30 +12,33 @@ author_profile: true
 <div class="featured-card" style="padding: 2em; background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%); border-radius: 12px; margin: 2em 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 4px solid #2c5f2d;">
 
 <h3 style="margin-top: 0; color: #1a4d1b;">Insurity, Inc. | AI Associate Developer</h3>
-<p style="color: #666; font-style: italic;">Remote | October 2025 – Present</p>
+<p style="color: #666; font-style: italic;">Remote | October 2025 – August 2026</p>
 
 <h4 style="color: #2c5f2d; margin-top: 1.5em;">Key Achievements:</h4>
 <ul>
-  <li><strong style="color: #2c5f2d;">$700,000 in cost avoidance</strong> through Python automation (17x faster than industry standard)</li>
-  <li><strong>3 weeks vs. 3-4 months</strong> to migrate 175 enterprise reports to Power BI</li>
+  <li><strong style="color: #2c5f2d;">Sole engineer on six production workstreams</strong>, directing AI coding agents to deliver 37,600+ net lines of C#, SQL, and Python over 11 months</li>
+  <li><strong>$700,000 in cost avoidance</strong> through Python automation (17x faster than industry standard)</li>
+  <li><strong>3 weeks vs. 3-4 months</strong> to migrate 175 enterprise reports to Power BI across 6 business lines</li>
   <li><strong>100% verification pass rate</strong> across 187 SQL database connections with zero production incidents</li>
-  <li><strong>HIPAA-compliant audit infrastructure</strong> covering 23 PHI tables (85-96% storage reduction, zero audit gaps)</li>
+  <li><strong>HIPAA-compliant audit infrastructure</strong> covering 23 PHI tables (85-96% storage reduction, 1,745 to 186 bytes per record)</li>
 </ul>
 
 <h4 style="color: #2c5f2d; margin-top: 1.5em;">Technical Contributions:</h4>
 <ul>
-  <li>Developed and deployed machine learning models and RAG/LLM prototypes to support core product features</li>
-  <li>Engineered Python automation tools to migrate 175 SSRS reports, achieving $700,000 in cost avoidance with 17x faster migration velocity</li>
-  <li>Executed 1,225 technical modifications across 187 SQL database connections with 100% verification pass rate</li>
-  <li>Built comprehensive HIPAA audit infrastructure covering 23 PHI tables with SQL triggers, role-based access controls, and field masking</li>
+  <li>Directed AI coding agents (Claude, Replit) as sole engineer across six production workstreams, retaining full architectural ownership, code review, and test coverage of all generated output</li>
+  <li>Engineered 5 Python automation tools to migrate 175 enterprise reports, parsing 264,000+ lines of XML and applying 1,225 modifications across 187 database connections</li>
+  <li>Architected a dual-layer HIPAA audit system on 23 PHI tables (9,594 lines C# + SQL) using dynamic SQL triggers with runtime column discovery, a 5-step username resolution chain, 3-tier RBAC, and field masking</li>
+  <li>Built a Roslyn static analysis tool producing a type-resolved inventory of every data-layer call site, then a Python codemod that automated the refactor from that inventory</li>
+  <li>Delivered an enterprise document-storage integration in 22 days using provider-pattern architecture, OAuth2 lifecycle management, and DualWrite zero-downtime migration, validated by 234 automated tests</li>
 </ul>
 
 <div style="margin-top: 1.5em;">
   <span class="skill-badge">Python</span>
+  <span class="skill-badge">C#</span>
   <span class="skill-badge">SQL</span>
   <span class="skill-badge">Power BI</span>
-  <span class="skill-badge">Azure AI</span>
-  <span class="skill-badge">RAG/LLMs</span>
+  <span class="skill-badge">Roslyn</span>
+  <span class="skill-badge">AI Agent Orchestration</span>
   <span class="skill-badge">HIPAA Compliance</span>
 </div>
 
