@@ -16,15 +16,10 @@
   "@type": "Person",
   "name": "Jackson Small",
   "jobTitle": "Data Scientist & ML Researcher",
-  "email": "mailto:jackson.small2022@gmail.com",
   "url": "https://jacksonsmall.github.io/",
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "University of Central Florida"
-  },
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Insurity, Inc."
   },
   "award": "UCF Data Science Award for Excellence in Undergraduate Achievement — Overall Winner (SDMSS, 2026)",
   "knowsAbout": ["Machine Learning", "Statistics", "Deep Learning", "LLM Fine-tuning", "RAG Systems", "Video Generation", "EEG Signal Processing"],
@@ -428,44 +423,21 @@ section { padding: 96px 0 8px; }
 .cert-name { font-weight: 600; font-size: 0.94rem; font-family: var(--font-display); }
 .cert-issuer { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); }
 
-/* ============ Coursework tabs ============ */
-.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
-.tab-btn {
-  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
-  color: var(--text-muted); background: var(--surface);
-  border: 1px solid var(--border); border-radius: 999px;
-  padding: 9px 18px; cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-.tab-btn:hover { color: var(--text); border-color: var(--border-strong); }
-.tab-btn.active { color: var(--accent); background: var(--accent-dim); border-color: var(--accent-border); }
-.tab-btn .count { color: var(--text-dim); font-size: 0.85em; }
-.tab-btn.active .count { color: var(--accent); opacity: 0.7; }
-.tab-panel { display: none; }
-.tab-panel.active { display: block; animation: tabIn 0.35s var(--ease); }
-@keyframes tabIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.course-wrap { padding: 8px 10px; overflow-x: auto; }
-.course-table { width: 100%; border-collapse: collapse; min-width: 560px; }
-.course-table th {
+/* ============ Compact table ============ */
+.mini-wrap { padding: 8px 10px; overflow-x: auto; }
+.mini-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.mini-table th {
   font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim);
   text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border);
 }
-.course-table td { padding: 12px 16px; font-size: 0.88rem; color: var(--text-muted); border-bottom: 1px solid rgba(148, 163, 184, 0.07); }
-.course-table tr:last-child td { border-bottom: none; }
-.course-table tbody tr { transition: background 0.15s; }
-.course-table tbody tr:hover { background: rgba(148, 163, 184, 0.05); }
-.course-code { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
-.course-title { color: var(--text); font-weight: 500; }
-.course-term { font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap; }
-.grade {
-  display: inline-block; font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
-  border-radius: 6px; padding: 2px 10px; white-space: nowrap;
-  color: var(--text-muted); background: rgba(148, 163, 184, 0.1); border: 1px solid var(--border);
-}
-.grade.a { color: var(--accent); background: var(--accent-dim); border-color: var(--accent-border); }
-.grade.ip { color: var(--blue); background: var(--blue-dim); border-color: rgba(96, 165, 250, 0.3); }
-.course-note { font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim); margin-top: 18px; }
+.mini-table td { padding: 12px 16px; font-size: 0.88rem; color: var(--text-muted); border-bottom: 1px solid rgba(148, 163, 184, 0.07); }
+.mini-table tr:last-child td { border-bottom: none; }
+.mini-table tbody tr { transition: background 0.15s; }
+.mini-table tbody tr:hover { background: rgba(148, 163, 184, 0.05); }
+.mini-code { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.mini-title { color: var(--text); font-weight: 500; }
+.mini-meta { font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap; }
 
 /* ============ Contact ============ */
 .contact-panel { padding: 56px 40px; text-align: center; }
@@ -624,10 +596,9 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   .nav-toggle { display: block; }
   .kbd-hint { display: none; }
   .to-top { right: 14px; bottom: 14px; }
-  .course-table { min-width: 470px; }
-  .course-table th, .course-table td { padding: 10px 10px; }
-  .course-table th:nth-child(5), .course-table td:nth-child(5) { display: none; }
-  .course-wrap {
+  .mini-table { min-width: 470px; }
+  .mini-table th, .mini-table td { padding: 10px 10px; }
+  .mini-wrap {
     -webkit-mask-image: linear-gradient(90deg, black 90%, transparent);
     mask-image: linear-gradient(90deg, black 90%, transparent);
   }
@@ -671,7 +642,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
       <li><a href="#projects">projects</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#education">education</a></li>
-      <li><a href="#coursework">coursework</a></li>
       <li><a href="#community">community</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
@@ -747,7 +717,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          <div><div class="fact-label">Currently</div><div class="fact-value">AI Associate Developer @ Insurity · Incoming M.S. + GTA @ UCF</div></div>
+          <div><div class="fact-label">Currently</div><div class="fact-value">M.S. Statistics &amp; Data Science + GTA @ UCF</div></div>
         </div>
         <div class="fact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
@@ -798,7 +768,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
       <article class="glass glass-hover xp-card reveal">
         <div class="xp-head"><h3>UCF AIM Lab <span style="font-weight:400; color:var(--text-muted); font-size:0.75em;">· AI &amp; Imaging in Medicine</span></h3><span class="xp-role">Undergraduate Researcher</span></div>
-        <p class="xp-date">Spring 2026 – Present · Orlando, FL · Supervisor: Dr. Yu Tian (AIM Lab Director)</p>
+        <p class="xp-date">Spring 2026 – Aug 2026 · Orlando, FL · Supervisor: Dr. Yu Tian (AIM Lab Director)</p>
         <div class="xp-chips">
           <span class="chip blue">Wan 2.2 <small>Alibaba · 14B params</small></span>
           <span class="chip blue">H100 <small>ARCC cluster</small></span>
@@ -943,16 +913,16 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
     </div>
 
     <h3 class="archive-title reveal"><span class="tick">//</span> more things I've built</h3>
-    <div class="glass course-wrap reveal">
-      <table class="course-table">
+    <div class="glass mini-wrap reveal">
+      <table class="mini-table">
         <thead><tr><th>Project</th><th>What it is</th><th>Stack</th></tr></thead>
         <tbody>
-          <tr><td class="course-code">causal-self</td><td class="course-title">Personal causal-inference platform — 6 automated data collectors over 2.5 years of personal data, DoWhy / Granger / Bayesian ITS analyses, Streamlit dashboard</td><td class="course-term">Python · DoWhy · PyMC</td></tr>
-          <tr><td class="course-code">mcsr-wrapped</td><td class="course-title">Spotify-Wrapped-style season recap for Minecraft speedrunners — K-means player archetypes, percentile stats, shareable image cards</td><td class="course-term">FastAPI · scikit-learn · HTMX</td></tr>
-          <tr><td class="course-code">jackpi-monitor</td><td class="course-title">Raspberry Pi homelab dashboard — live system stats, service health controls, multi-device sync status</td><td class="course-term">FastAPI · systemd</td></tr>
-          <tr><td class="course-code">kaggle</td><td class="course-title">9 competitions spanning acoustic species ID (BirdCLEF), LLM reasoning with LoRA, math olympiad problems, and RNA bio-sequence prediction</td><td class="course-term">PyTorch · XGBoost · LoRA</td></tr>
-          <tr><td class="course-code">habit-tracker</td><td class="course-title">Personal habit tracking app with full test coverage</td><td class="course-term">React · TypeScript · Vite</td></tr>
-          <tr><td class="course-code">this-site</td><td class="course-title">Hand-rolled single-file portfolio — command palette, theme system, zero frameworks</td><td class="course-term">HTML · CSS · JS</td></tr>
+          <tr><td class="mini-code">causal-self</td><td class="mini-title">Personal causal-inference platform — 6 automated data collectors over 2.5 years of personal data, DoWhy / Granger / Bayesian ITS analyses, Streamlit dashboard</td><td class="mini-meta">Python · DoWhy · PyMC</td></tr>
+          <tr><td class="mini-code">mcsr-wrapped</td><td class="mini-title">Spotify-Wrapped-style season recap for Minecraft speedrunners — K-means player archetypes, percentile stats, shareable image cards</td><td class="mini-meta">FastAPI · scikit-learn · HTMX</td></tr>
+          <tr><td class="mini-code">jackpi-monitor</td><td class="mini-title">Raspberry Pi homelab dashboard — live system stats, service health controls, multi-device sync status</td><td class="mini-meta">FastAPI · systemd</td></tr>
+          <tr><td class="mini-code">kaggle</td><td class="mini-title">9 competitions spanning acoustic species ID (BirdCLEF), LLM reasoning with LoRA, math olympiad problems, and RNA bio-sequence prediction</td><td class="mini-meta">PyTorch · XGBoost · LoRA</td></tr>
+          <tr><td class="mini-code">habit-tracker</td><td class="mini-title">Personal habit tracking app with full test coverage</td><td class="mini-meta">React · TypeScript · Vite</td></tr>
+          <tr><td class="mini-code">this-site</td><td class="mini-title">Hand-rolled single-file portfolio — command palette, theme system, zero frameworks</td><td class="mini-meta">HTML · CSS · JS</td></tr>
         </tbody>
       </table>
     </div>
@@ -1034,15 +1004,15 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
       <div class="glass glass-hover edu-card reveal">
         <h3 class="degree">M.S. Statistics &amp; Data Science</h3>
         <p class="school">University of Central Florida</p>
-        <p class="dates">Fall 2026 – Expected May 2028 · Incoming</p>
-        <p class="detail">Admitted with a Graduate Teaching Assistantship (20 hrs/week) and the competitive Graduate Dean's Fellowship, awarded by Dr. Edgard Maboudou — including full tuition remission and health insurance coverage. Continuing AIM Lab research on generative video models for anomaly prediction.</p>
+        <p class="dates">Fall 2026 – Expected May 2028</p>
+        <p class="detail">Admitted with a Graduate Teaching Assistantship (20 hrs/week) and the competitive Graduate Dean's Fellowship, awarded by Dr. Edgard Maboudou — including full tuition remission and health insurance coverage.</p>
         <div class="xp-chips"><span class="chip">$15K <small>GTA stipend</small></span><span class="chip">$5K <small>Dean's Fellowship</small></span><span class="chip">100% <small>tuition remission</small></span></div>
       </div>
       <div class="glass glass-hover edu-card reveal">
         <h3 class="degree">B.S. Data Science <span style="font-weight:400; color:var(--text-muted); font-size:0.8em;">· Minor in Statistics</span></h3>
         <p class="school">University of Central Florida · Burnett Honors College</p>
         <p class="dates">Aug 2022 – May 2026</p>
-        <p class="detail">President's Honor Roll &amp; Dean's List. Coursework: Statistical Learning, Applied Time Series, Statistical Theory I &amp; II, Mathematical Modeling, Big Data Analytics, Data Management, Data Science I &amp; II, Stat. Foundations of DS &amp; AI I &amp; II.</p>
+        <p class="detail">President's Honor Roll &amp; Dean's List.</p>
         <div class="xp-chips"><span class="chip">3.83 <small>GPA</small></span><span class="chip gold">1st <small>DS undergrad published @ UCF</small></span></div>
       </div>
     </div>
@@ -1065,91 +1035,10 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   </div>
 </section>
 
-<!-- ============ COURSEWORK ============ -->
-<section id="coursework">
-  <div class="container">
-    <p class="kicker reveal">06 · Coursework</p>
-    <h2 class="section-title reveal">The full transcript</h2>
-    <div class="hero-stats reveal" style="margin-bottom:28px;">
-      <span class="chip">28 <small>courses</small></span>
-      <span class="chip">21 <small>A / A&minus; grades</small></span>
-      <span class="chip">3.83 <small>GPA</small></span>
-    </div>
-    <div class="tabs reveal" role="tablist" aria-label="Course categories">
-      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-stats" id="tabbtn-stats">Statistics <span class="count">· 13</span></button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-ds" id="tabbtn-ds">Data Science Core <span class="count">· 4</span></button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cs" id="tabbtn-cs">CS &amp; Data Management <span class="count">· 6</span></button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-math" id="tabbtn-math">Mathematics <span class="count">· 5</span></button>
-    </div>
-
-    <div class="tab-panel active glass course-wrap reveal" id="tab-stats" role="tabpanel" aria-labelledby="tabbtn-stats">
-      <table class="course-table">
-        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
-        <tbody>
-          <tr><td class="course-code">STA 2023</td><td class="course-title">Statistical Methods I</td><td class="course-term">Fall 2022</td><td><span class="grade">S</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4163</td><td class="course-title">Statistical Methods II</td><td class="course-term">Spring 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4164</td><td class="course-title">Statistical Methods III</td><td class="course-term">Fall 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4241</td><td class="course-title">Statistical Learning</td><td class="course-term">Summer 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4173</td><td class="course-title">Biostatistical Methods</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4321</td><td class="course-title">Statistical Theory I</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4322</td><td class="course-title">Statistical Theory II</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4903H</td><td class="course-title">Honors Directed Reading I</td><td class="course-term">Summer 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4364</td><td class="course-title">Statistics Data Science AI I</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4724</td><td class="course-title">Big Data Analytics Methods</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>4.00</td></tr>
-          <tr><td class="course-code">STA 4970H</td><td class="course-title">Honors Undergraduate Thesis</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4365</td><td class="course-title">Statistics Data Science AI II</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">STA 4852</td><td class="course-title">Applied Time Series</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>3.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tab-panel glass course-wrap" id="tab-ds" role="tabpanel" aria-labelledby="tabbtn-ds">
-      <table class="course-table">
-        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
-        <tbody>
-          <tr><td class="course-code">ISC 4241</td><td class="course-title">Data Science I</td><td class="course-term">Fall 2024</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">ISC 4242</td><td class="course-title">Data Science II</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">ISC 4551</td><td class="course-title">Data Graphics &amp; Visualization</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">ISC 4323C</td><td class="course-title">Capstone for Data Science</td><td class="course-term">Spring 2026</td><td><span class="grade ip">In Progress</span></td><td>4.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tab-panel glass course-wrap" id="tab-cs" role="tabpanel" aria-labelledby="tabbtn-cs">
-      <table class="course-table">
-        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
-        <tbody>
-          <tr><td class="course-code">COP 3223C</td><td class="course-title">Intro to Programming with C</td><td class="course-term">Spring 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">COP 4283</td><td class="course-title">Data Science Programming</td><td class="course-term">Fall 2023</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">COP 3502C</td><td class="course-title">Computer Science I</td><td class="course-term">Spring 2024</td><td><span class="grade">B&minus;</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">CIS 3360</td><td class="course-title">Security in Computing</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">CIS 4340</td><td class="course-title">Data Management Technology</td><td class="course-term">Spring 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-          <tr><td class="course-code">COT 3100C</td><td class="course-title">Intro to Discrete Structures</td><td class="course-term">Summer 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tab-panel glass course-wrap" id="tab-math" role="tabpanel" aria-labelledby="tabbtn-math">
-      <table class="course-table">
-        <thead><tr><th>Course</th><th>Title</th><th>Term</th><th>Grade</th><th>Units</th></tr></thead>
-        <tbody>
-          <tr><td class="course-code">MAC 2311C</td><td class="course-title">Calculus with Analytic Geometry I</td><td class="course-term">Summer 2023</td><td><span class="grade a">A</span></td><td>4.00</td></tr>
-          <tr><td class="course-code">MAC 2312</td><td class="course-title">Calculus with Analytic Geometry II</td><td class="course-term">Fall 2023</td><td><span class="grade">C+</span></td><td>4.00</td></tr>
-          <tr><td class="course-code">MAC 2313</td><td class="course-title">Calculus with Analytic Geometry III</td><td class="course-term">Spring 2024</td><td><span class="grade">C</span></td><td>4.00</td></tr>
-          <tr><td class="course-code">MAS 3105</td><td class="course-title">Matrix and Linear Algebra</td><td class="course-term">Fall 2024</td><td><span class="grade a">A&minus;</span></td><td>4.00</td></tr>
-          <tr><td class="course-code">MAP 4191</td><td class="course-title">Mathematical Modeling of Data</td><td class="course-term">Fall 2025</td><td><span class="grade a">A</span></td><td>3.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="course-note reveal">Spring 2026 courses were in progress at time of posting · "S" = satisfactory completion via transfer credit</p>
-  </div>
-</section>
-
 <!-- ============ COMMUNITY ============ -->
 <section id="community">
   <div class="container">
-    <p class="kicker reveal">07 · Community &amp; Leadership</p>
+    <p class="kicker reveal">06 · Community &amp; Leadership</p>
     <h2 class="section-title reveal">Beyond the terminal</h2>
     <div class="skills-grid">
 
@@ -1193,14 +1082,14 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 <section id="contact">
   <div class="container">
     <div class="glass contact-panel reveal">
-      <p class="kicker" style="justify-content:center;">08 · Contact</p>
+      <p class="kicker" style="justify-content:center;">07 · Contact</p>
       <h2>Let's build something rigorous.</h2>
       <p>Open to ML engineering, data science, and research roles. If the metrics above caught your eye, my inbox is open.</p>
-      <a class="contact-email" href="mailto:jackson.small2022@gmail.com">
+      <a class="contact-email" id="contact-email" href="#contact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        jackson.small2022@gmail.com
+        <span>show email address</span>
       </a>
-      <button class="copy-btn" id="copy-email" data-copy="jackson.small2022@gmail.com" aria-label="Copy email address to clipboard">
+      <button class="copy-btn" id="copy-email" aria-label="Copy email address to clipboard">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         <span>copy</span>
       </button>
@@ -1250,7 +1139,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
       <button class="palette-item" data-goto="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Projects<span class="pi-kind">jump</span></button>
       <button class="palette-item" data-goto="#skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Skills<span class="pi-kind">jump</span></button>
       <button class="palette-item" data-goto="#education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Education<span class="pi-kind">jump</span></button>
-      <button class="palette-item" data-goto="#coursework"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Coursework<span class="pi-kind">jump</span></button>
       <button class="palette-item" data-goto="#community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Community<span class="pi-kind">jump</span></button>
       <button class="palette-item" data-goto="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Contact<span class="pi-kind">jump</span></button>
       <button class="palette-item" data-href="https://github.com/jacksonSmall"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub — jacksonSmall<span class="pi-kind">open</span></button>
@@ -1258,7 +1146,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
       <button class="palette-item" data-href="https://huggingface.co/jsmall12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>HuggingFace — jsmall12<span class="pi-kind">open</span></button>
       <button class="palette-item" data-href="https://stars.library.ucf.edu/hut2024/462"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Published Thesis — UCF STARS<span class="pi-kind">open</span></button>
       <button class="palette-item" data-href="files/cv.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Resume — PDF<span class="pi-kind">open</span></button>
-      <button class="palette-item" data-href="mailto:jackson.small2022@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email — jackson.small2022@gmail.com<span class="pi-kind">open</span></button>
+      <button class="palette-item" data-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email<span class="pi-kind">open</span></button>
       <div class="palette-empty" id="palette-empty">no matches — try "projects" or "github"</div>
     </div>
     <div class="palette-foot">
@@ -1410,10 +1298,27 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   }
 
   /* ---- Copy email ---- */
+  /* ---- Email (assembled on click, never in the HTML) ---- */
+  function emailAddr() {
+    return ["2202llams.noskcaj", "moc.liamg"].map(function (x) {
+      return x.split("").reverse().join("");
+    }).join("@");
+  }
+  var emailLink = document.getElementById("contact-email");
+  if (emailLink) {
+    emailLink.addEventListener("click", function (e) {
+      if (emailLink.getAttribute("data-shown")) return;
+      e.preventDefault();
+      emailLink.setAttribute("data-shown", "1");
+      emailLink.href = "mailto:" + emailAddr();
+      emailLink.querySelector("span").textContent = emailAddr();
+    });
+  }
+
   var copyBtn = document.getElementById("copy-email");
   if (copyBtn && navigator.clipboard) {
     copyBtn.addEventListener("click", function () {
-      navigator.clipboard.writeText(copyBtn.getAttribute("data-copy")).then(function () {
+      navigator.clipboard.writeText(emailAddr()).then(function () {
         copyBtn.classList.add("copied");
         copyBtn.querySelector("span").textContent = "copied ✓";
         setTimeout(function () {
@@ -1494,7 +1399,7 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
   }
   function activate(item) {
     var goto = item.getAttribute("data-goto");
-    var href = item.getAttribute("data-href");
+    var href = item.hasAttribute("data-email") ? "mailto:" + emailAddr() : item.getAttribute("data-href");
     closePalette();
     if (goto) {
       var t = document.querySelector(goto);
@@ -1539,21 +1444,6 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
       }
     });
   }
-
-  /* ---- Coursework tabs ---- */
-  var tabBtns = document.querySelectorAll(".tab-btn");
-  var tabPanels = document.querySelectorAll(".tab-panel");
-  tabBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      tabBtns.forEach(function (b) {
-        b.classList.toggle("active", b === btn);
-        b.setAttribute("aria-selected", String(b === btn));
-      });
-      tabPanels.forEach(function (p) {
-        p.classList.toggle("active", p.id === btn.getAttribute("aria-controls"));
-      });
-    });
-  });
 
   /* ---- Footer year ---- */
   var yearEl = document.getElementById("year");
